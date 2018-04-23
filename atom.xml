@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CodeDeng</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-03-26T16:54:34.869Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>CodeDeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FMDB 数据库简单基本操作</title>
+    <link href="http://yoursite.com/2018/03/27/FMDB-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E5%8D%95%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2018/03/27/FMDB-数据库简单基本操作/</id>
+    <published>2018-03-26T16:52:43.000Z</published>
+    <updated>2018-03-26T16:54:34.869Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1.创建表: create table if not exists 表名 (字段名1, 字段名2…); 例如：创建 t_student 表 id（id自增长）</span><br><span class="line"></span><br><span class="line">create table if not exists t_student (id integer primary key autoincrement, name text not null, age integer)</span><br><span class="line">2.增加数据: insert into 表名 (字段名1, 字段名2, …) values(字段1的值, 字段2的值, …); 例如：在 t_student 表插入name，age字段</span><br><span class="line"></span><br><span class="line">insert into t_student (name,age) values (@”Jack”,@17);</span><br><span class="line">3.1根据条件删除数据： delete from 表名 where 条件; 例如：</span><br><span class="line">删除 t_student 表中 name 字段为 Jack 的数据</span><br><span class="line"></span><br><span class="line">delete from t_student where name = @”Jack”;</span><br><span class="line">3.2删除表中所有的数据： delete from 表名； 例如：</span><br><span class="line"></span><br><span class="line">delete from t_student;</span><br><span class="line">4.根据条件更改某个数据 update 表名 set 字段1 = ‘值1’, 字段2 = ‘值2’ where 字段1 = ‘字段1的当前值’ 例如：</span><br><span class="line"></span><br><span class="line">update t_student set name = ‘lily’, age = ‘16’ where name = ‘Jack’</span><br><span class="line">5.1根据条件查找 select from 表名 where 字段1 = ‘字段1的值’ 例如：</span><br><span class="line"></span><br><span class="line">select from t_student where age = ‘16’</span><br><span class="line">5.2查找所有数据 select from 表名 例如：</span><br><span class="line"></span><br><span class="line">select from t_student</span><br><span class="line">5.3排序查找： select from 表名 order by 字段 例如：</span><br><span class="line"></span><br><span class="line">select from t_student order by age asc （升序，默认）</span><br><span class="line">select * from t_student order by age desc （降序） 3.</span><br><span class="line">6.删除表： drop table 表名 例如：</span><br><span class="line"></span><br><span class="line">drop table t_student</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+      <category term="FMDB" scheme="http://yoursite.com/categories/FMDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/03/26/hello-world/"/>
+    <id>http://yoursite.com/2018/03/26/hello-world/</id>
+    <published>2018-03-26T07:04:10.082Z</published>
+    <updated>2018-03-26T07:04:10.082Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
