@@ -99,17 +99,17 @@
 
 
 
-  <meta name="description" content="12345678910111213141516171819202122232425262728291.创建表: create table if not exists 表名 (字段名1, 字段名2…); 例如：创建 t_student 表 id（id自增长）create table if not exists t_student (id integer primary key autoincreme">
+  <meta name="description" content="#iOS开发 UITableViewCell的重用机制. 首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢. 我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FMDB 数据库简单基本操作">
-<meta property="og:url" content="http://yoursite.com/2018/03/27/FMDB-数据库简单基本操作/index.html">
+<meta property="og:title" content="CodeDeng">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/15244678992634/index.html">
 <meta property="og:site_name" content="CodeDeng">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728291.创建表: create table if not exists 表名 (字段名1, 字段名2…); 例如：创建 t_student 表 id（id自增长）create table if not exists t_student (id integer primary key autoincreme">
+<meta property="og:description" content="#iOS开发 UITableViewCell的重用机制. 首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢. 我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-26T16:54:34.869Z">
+<meta property="og:updated_time" content="2018-04-23T07:21:51.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FMDB 数据库简单基本操作">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728291.创建表: create table if not exists 表名 (字段名1, 字段名2…); 例如：创建 t_student 表 id（id自增长）create table if not exists t_student (id integer primary key autoincreme">
+<meta name="twitter:title" content="CodeDeng">
+<meta name="twitter:description" content="#iOS开发 UITableViewCell的重用机制. 首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢. 我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/27/FMDB-数据库简单基本操作/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/15244678992634/"/>
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>FMDB 数据库简单基本操作 | CodeDeng</title>
+  <title> | CodeDeng</title>
   
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/FMDB-数据库简单基本操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/15244678992634/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CodeDeng">
@@ -331,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FMDB 数据库简单基本操作</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -343,7 +343,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T00:52:43+08:00">2018-03-27</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T15:18:19+08:00">2018-04-23</time>
             
 
             
@@ -352,24 +352,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/FMDB/" itemprop="url" rel="index"><span itemprop="name">FMDB</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -398,7 +380,31 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1.创建表: create table if not exists 表名 (字段名1, 字段名2…); 例如：创建 t_student 表 id（id自增长）</span><br><span class="line"></span><br><span class="line">create table if not exists t_student (id integer primary key autoincrement, name text not null, age integer)</span><br><span class="line">2.增加数据: insert into 表名 (字段名1, 字段名2, …) values(字段1的值, 字段2的值, …); 例如：在 t_student 表插入name，age字段</span><br><span class="line"></span><br><span class="line">insert into t_student (name,age) values (@”Jack”,@17);</span><br><span class="line">3.1根据条件删除数据： delete from 表名 where 条件; 例如：</span><br><span class="line">删除 t_student 表中 name 字段为 Jack 的数据</span><br><span class="line"></span><br><span class="line">delete from t_student where name = @”Jack”;</span><br><span class="line">3.2删除表中所有的数据： delete from 表名； 例如：</span><br><span class="line"></span><br><span class="line">delete from t_student;</span><br><span class="line">4.根据条件更改某个数据 update 表名 set 字段1 = ‘值1’, 字段2 = ‘值2’ where 字段1 = ‘字段1的当前值’ 例如：</span><br><span class="line"></span><br><span class="line">update t_student set name = ‘lily’, age = ‘16’ where name = ‘Jack’</span><br><span class="line">5.1根据条件查找 select from 表名 where 字段1 = ‘字段1的值’ 例如：</span><br><span class="line"></span><br><span class="line">select from t_student where age = ‘16’</span><br><span class="line">5.2查找所有数据 select from 表名 例如：</span><br><span class="line"></span><br><span class="line">select from t_student</span><br><span class="line">5.3排序查找： select from 表名 order by 字段 例如：</span><br><span class="line"></span><br><span class="line">select from t_student order by age asc （升序，默认）</span><br><span class="line">select * from t_student order by age desc （降序） 3.</span><br><span class="line">6.删除表： drop table 表名 例如：</span><br><span class="line"></span><br><span class="line">drop table t_student</span><br></pre></td></tr></table></figure>
+        <p>#iOS开发 UITableViewCell的重用机制.</p>
+<p>首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.<br>我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢.</p>
+<p>我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当我们滑动屏幕需要浏览的时候,我们才需要它加载进来.因此,就有了我们要介绍的这部分内容,UITabelViewCell的重用机制.</p>
+<p>重用机制实现了数据和显示的分离,并不为每个数据创建一个UITableViewCell,我们只创建屏幕可显示的最大的cell个数+1,然后去循环重复使用这些cell,既节省空间,又达到我们需要显示的效果.<br>这种机制下系统默认有一个可变数组NSMutableArray<em> visiableCells,用来保存当前显示的cell.一个可变字典NSMutableDictnery</em> reusableTableCells,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cell).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 设置单元格  indexPath :单元格当前所在位置 -- 哪个分区哪一行等</span><br><span class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //UITableViewDataSource</span><br><span class="line">&#123;</span><br><span class="line">    static NSString *identifier = @&quot;cell&quot; ;</span><br><span class="line">    //相当于从集合中找寻完全出屏幕的单元格.</span><br><span class="line">    // identifier : 因为一个表视图中可能存在多种样式的单元格,咱们把相同样式的单元格放到同一个集合里面,为这个集合加标示符,当我们需要用到某种样式的单元格的时候,根据不同的标示符,从不同的集合中找寻单元格.</span><br><span class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier] ;</span><br><span class="line">    // 如果从集合中未找到单元格,也就是集合中还没有单元格,也就是还没有单元格出屏幕,那么我们就需要创建单元格</span><br><span class="line">    if (!cell)</span><br><span class="line">    &#123;</span><br><span class="line">        // 创建cell的时候需要标示符(Identifier)是因为,当该cell出屏幕的时候需要根据标示符放到对应的集合中.</span><br><span class="line">        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@&quot;cell&quot;] ;</span><br><span class="line">    return cell ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">系统第一次执行</span><br><span class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath</span><br><span class="line">这个方法的时候, reusableTableCells为空,</span><br><span class="line">[tableView dequeueReusableCellWithIdentifier:identifier]</span><br><span class="line">的返回值为nil,我们需要通过</span><br><span class="line">[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier: identifier]</span><br><span class="line">方式来创建.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当我们的数据过多,整个屏幕的cell显示不完全时,这个方法的执行情况是 :</p>
+</blockquote>
+<blockquote>
+<p>(1) 先执行<br><code>[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier: identifier]</code><br>创建整个屏幕能显示的cell数+1的cell(当我们拖动UITableView的时候,第一个cell没有移出屏幕,最下面的cell就已经存在),并指定相同或者不同的标示符identifier.把创建出的屏幕能显示的cell全部都加入到visiableCells数组中(最后一个创建的先不加入数组)，reusableTableCells为空.</p>
+</blockquote>
+<blockquote>
+<p>(2)当我们拖动屏幕时,顶端的cell移出屏幕并加入到reusableTableCells字典中,键为identifier ,并把之前已经创建的但是没有加入到visiableCells的cell加入到visiableCells数组中.</p>
+</blockquote>
+<blockquote>
+<p>(3)当我们接着拖动的时候,因为reusableTableCells中已经有值，所以，当需要显示新的cell，cellForRowAtIndexPath再次被调用，执行[tableView dequeueReusableCellWithIdentifier: identifier]，返回一个标示符为identifier的cell。该cell移出reusableTableCells之后加入到visiableCells；顶端的cell移出visiableCells并加入到reusableTableCells.如果visiableCells数组中没有找到identifier类型的cell,则再次重新alloc一个.</p>
+</blockquote>
+<p>在iOS6之后系统加入了一种单元格注册的方法.<br><code>[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier: identifier];</code></p>
+<blockquote>
+<p>这个方法的作用是,当我们从重用队列中取cell的时候,如果没有,系统会帮我们创建我们给定类型的cell,如果有,则直接重用. 这种方式cell的样式为系统默认样式.</p>
+</blockquote>
+<p>在设置cell的方法中只需要:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath</span><br><span class="line">&#123;</span><br><span class="line">    // 重用队列中取单元格 由于上面已经注册过单元格,系统会帮我们做判断,不用再次手动判断单元格是否存在</span><br><span class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier forIndexPath:indexPath] ;</span><br><span class="line">    return cell ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -425,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/26/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/23/15244677199986/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -435,7 +441,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/23/15244555859136/" rel="prev" title="">
+              <a href="/2018/04/23/15244681909456/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
