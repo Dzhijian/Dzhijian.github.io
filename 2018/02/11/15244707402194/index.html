@@ -99,12 +99,13 @@
 
 
 
-  <meta name="description" content="OpenGL学习 纹理(五)一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint par">
+  <meta name="description" content="一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint param);//恢复像素存储⽅方">
+<meta name="keywords" content="OpenGL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenGL学习 纹理(五)">
-<meta property="og:url" content="http://yoursite.com/2018/03/27/15244707402194/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/02/11/15244707402194/index.html">
 <meta property="og:site_name" content="CodeDeng">
-<meta property="og:description" content="OpenGL学习 纹理(五)一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint par">
+<meta property="og:description" content="一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint param);//恢复像素存储⽅方">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244725538593.jpg-style02">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244725763875.jpg-style02">
@@ -117,10 +118,10 @@
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244729211984.jpg-style02">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244729483034.jpg-style02">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244729639950.jpg-style02">
-<meta property="og:updated_time" content="2018-04-23T09:34:22.586Z">
+<meta property="og:updated_time" content="2018-04-23T09:51:28.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL学习 纹理(五)">
-<meta name="twitter:description" content="OpenGL学习 纹理(五)一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint par">
+<meta name="twitter:description" content="一.原始图像数据1.图像存储空间 = 图像 width  图像 height  每个像素的字节数例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间? 199 * 3 = 597字节 二 认识函数2.1 函数123456789//改变像素存储⽅方式void glPixelStorei(GLenum pname,GLint param);//恢复像素存储⽅方">
 <meta name="twitter:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244725538593.jpg-style02">
 
 
@@ -130,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/27/15244707402194/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/11/15244707402194/"/>
 
 
 
@@ -326,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/15244707402194/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/11/15244707402194/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CodeDeng">
@@ -355,7 +356,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T00:52:43+08:00">2018-03-27</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-11T20:05:40+08:00">2018-02-11</time>
             
 
             
@@ -410,7 +411,7 @@
       
 
       
-        <h1 id="OpenGL学习-纹理-五"><a href="#OpenGL学习-纹理-五" class="headerlink" title="OpenGL学习 纹理(五)"></a>OpenGL学习 纹理(五)</h1><h3 id="一-原始图像数据"><a href="#一-原始图像数据" class="headerlink" title="一.原始图像数据"></a>一.原始图像数据</h3><p><strong>1.图像存储空间 = 图像 width <em> 图像 height </em> 每个像素的字节数</strong><br>例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间?</p>
+        <h3 id="一-原始图像数据"><a href="#一-原始图像数据" class="headerlink" title="一.原始图像数据"></a>一.原始图像数据</h3><p><strong>1.图像存储空间 = 图像 width <em> 图像 height </em> 每个像素的字节数</strong><br>例如:有一张 RGB 的图像(每个颜色通道8位),图像的宽度199个像素,每行需要多少存储空间?</p>
 <p>199 * 3 = 597字节</p>
 <h3 id="二-认识函数"><a href="#二-认识函数" class="headerlink" title="二 认识函数"></a>二 认识函数</h3><h4 id="2-1-函数"><a href="#2-1-函数" class="headerlink" title="2.1 函数"></a>2.1 函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//改变像素存储⽅方式</span><br><span class="line">void glPixelStorei(GLenum pname,GLint param);</span><br><span class="line">//恢复像素存储⽅方式</span><br><span class="line">void glPixelStoref(GLenum pname,GLfloat param);</span><br><span class="line">//举例例:</span><br><span class="line">//参数1:GL_UNPACK_ALIGNMENT 指定OpenGL 如何从数据缓存区中解包图像 数据</span><br><span class="line">//参数2:表示参数GL_UNPACK_ALIGNMENT 设置的值</span><br><span class="line">//GL_UNPACK_ALIGNMENT 指内存中每个像素⾏行行起点的排列列请求，允许设置为1 (byte排列列)、2(排列列为偶数byte的⾏行行)、4(字word排列列)、8(⾏行行从双字节 边界开始)</span><br><span class="line">glPixelStorei(GL_UNPACK_ALIGNMENT,1);</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-认识函数-从颜⾊色缓存区内容作为像素图直接读取"><a href="#2-2-认识函数-从颜⾊色缓存区内容作为像素图直接读取" class="headerlink" title="2.2 . 认识函数 从颜⾊色缓存区内容作为像素图直接读取"></a>2.2 . 认识函数 从颜⾊色缓存区内容作为像素图直接读取</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//参数1:x,矩形左下⻆角的窗⼝口坐标</span><br><span class="line">//参数2:y,矩形左下⻆角的窗⼝口坐标</span><br><span class="line">//参数3:width,矩形的宽，以像素为单位 //参数4:height,矩形的⾼高，以像素为单位</span><br><span class="line">//参数5:format,OpenGL 的像素格式，参考 表6-1 //参数6:type,解释参数pixels指向的数据，告诉OpenGL 使⽤用缓存区中的什什么 数据类型来存储颜⾊色分量量，像素数据的数据类型，参考 表6-2 //参数7:pixels,指向图形数据的指针</span><br><span class="line"></span><br><span class="line">void glReadPixels(GLint x,GLint y,GLSizei width,GLSizei</span><br><span class="line">        height, GLenum format, GLenum type,const void * pixels);</span><br></pre></td></tr></table></figure>
@@ -456,6 +457,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
+          
+        </div>
+      
 
       
       
@@ -465,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/FMDB-数据库简单基本操作/" rel="next" title="FMDB 数据库简单基本操作">
-                <i class="fa fa-chevron-left"></i> FMDB 数据库简单基本操作
+              <a href="/2018/02/09/15244691153165/" rel="next" title="OpenGL学习 基本变化 (四)">
+                <i class="fa fa-chevron-left"></i> OpenGL学习 基本变化 (四)
               </a>
             
           </div>
@@ -475,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/23/15244555859136/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/26/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,6 +582,19 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
             </nav>
           
 
@@ -613,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL学习-纹理-五"><span class="nav-number">1.</span> <span class="nav-text">OpenGL学习 纹理(五)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-原始图像数据"><span class="nav-number">1.0.1.</span> <span class="nav-text">一.原始图像数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-认识函数"><span class="nav-number">1.0.2.</span> <span class="nav-text">二 认识函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-函数"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">2.1 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-认识函数-从颜⾊色缓存区内容作为像素图直接读取"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2.2 . 认识函数 从颜⾊色缓存区内容作为像素图直接读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-认识函数-载⼊入纹理理"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">2.3 . 认识函数 载⼊入纹理理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-认识函数-使⽤用颜⾊色缓存区加载数据-形成新的纹理理使⽤用"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">2.4 认识函数 使⽤用颜⾊色缓存区加载数据,形成新的纹理理使⽤用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-更更新纹理理"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">2.5 更更新纹理理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-插⼊入替换纹理理"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">2.6 插⼊入替换纹理理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-纹理理对象"><span class="nav-number">1.0.3.</span> <span class="nav-text">三 纹理理对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-设置纹理理参数"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">3.1 设置纹理理参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-设置过滤⽅方式"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">3.2 设置过滤⽅方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-设置环绕⽅方式"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">3.3 设置环绕⽅方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-设置Mip-贴图"><span class="nav-number">1.0.4.</span> <span class="nav-text">四 设置Mip 贴图</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-原始图像数据"><span class="nav-number">1.</span> <span class="nav-text">一.原始图像数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-认识函数"><span class="nav-number">2.</span> <span class="nav-text">二 认识函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-函数"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-认识函数-从颜⾊色缓存区内容作为像素图直接读取"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 . 认识函数 从颜⾊色缓存区内容作为像素图直接读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-认识函数-载⼊入纹理理"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 . 认识函数 载⼊入纹理理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-认识函数-使⽤用颜⾊色缓存区加载数据-形成新的纹理理使⽤用"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 认识函数 使⽤用颜⾊色缓存区加载数据,形成新的纹理理使⽤用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-更更新纹理理"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 更更新纹理理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-插⼊入替换纹理理"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 插⼊入替换纹理理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-纹理理对象"><span class="nav-number">3.</span> <span class="nav-text">三 纹理理对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-设置纹理理参数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 设置纹理理参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-设置过滤⽅方式"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 设置过滤⽅方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-设置环绕⽅方式"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 设置环绕⽅方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-设置Mip-贴图"><span class="nav-number">4.</span> <span class="nav-text">四 设置Mip 贴图</span></a></li></ol></div>
             
 
           </div>

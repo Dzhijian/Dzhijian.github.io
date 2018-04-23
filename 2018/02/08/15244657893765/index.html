@@ -99,20 +99,21 @@
 
 
 
-  <meta name="description" content="OpenGL学习 深度测试(三)一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL">
+  <meta name="description" content="一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL_FACE); // 关闭 该函">
+<meta name="keywords" content="OpenGL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CodeDeng">
-<meta property="og:url" content="http://yoursite.com/2018/04/23/15244657893765/index.html">
+<meta property="og:title" content="OpenGL学习 深度测试(三)">
+<meta property="og:url" content="http://yoursite.com/2018/02/08/15244657893765/index.html">
 <meta property="og:site_name" content="CodeDeng">
-<meta property="og:description" content="OpenGL学习 深度测试(三)一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL">
+<meta property="og:description" content="一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL_FACE); // 关闭 该函">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244658266117.jpg-style01">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244659608381.jpg-style01">
 <meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244660140634.jpg-style01">
-<meta property="og:updated_time" content="2018-04-23T08:06:32.325Z">
+<meta property="og:updated_time" content="2018-04-23T09:51:43.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodeDeng">
-<meta name="twitter:description" content="OpenGL学习 深度测试(三)一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL">
+<meta name="twitter:title" content="OpenGL学习 深度测试(三)">
+<meta name="twitter:description" content="一、渲染过程是中可能产生的问题 解决办法：1：油画法2：正面、背面剔除。3：深度测试。 1.1、油画法  油画法：比较消耗性能，重复绘制了重叠部分，对于多个图形叠加在一起的，难以分辨哪个是最上层的，导致渲染混乱  1.2、正面背面剔除可以调用下面两个方法开启或关闭表面剔除 12glEnable(GL_CULL_FACE); //开启glDisable(GL_CULL_FACE); // 关闭 该函">
 <meta name="twitter:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244658266117.jpg-style01">
 
 
@@ -122,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/23/15244657893765/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/08/15244657893765/"/>
 
 
 
@@ -132,7 +133,7 @@
   };
 </script>
 
-  <title> | CodeDeng</title>
+  <title>OpenGL学习 深度测试(三) | CodeDeng</title>
   
 
 
@@ -318,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/15244657893765/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/15244657893765/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CodeDeng">
@@ -335,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">OpenGL学习 深度测试(三)</h1>
         
 
         <div class="post-meta">
@@ -347,7 +348,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T14:43:09+08:00">2018-04-23</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T22:43:09+08:00">2018-02-08</time>
             
 
             
@@ -356,6 +357,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OpenGL/" itemprop="url" rel="index"><span itemprop="name">OpenGL</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -384,7 +403,7 @@
       
 
       
-        <h1 id="OpenGL学习-深度测试-三"><a href="#OpenGL学习-深度测试-三" class="headerlink" title="OpenGL学习 深度测试(三)"></a>OpenGL学习 深度测试(三)</h1><h3 id="一、渲染过程是中可能产生的问题"><a href="#一、渲染过程是中可能产生的问题" class="headerlink" title="一、渲染过程是中可能产生的问题"></a>一、渲染过程是中可能产生的问题</h3><p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244658266117.jpg-style01" alt=""></p>
+        <h3 id="一、渲染过程是中可能产生的问题"><a href="#一、渲染过程是中可能产生的问题" class="headerlink" title="一、渲染过程是中可能产生的问题"></a>一、渲染过程是中可能产生的问题</h3><p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244658266117.jpg-style01" alt=""></p>
 <p>解决办法：<br>1：油画法<br>2：正面、背面剔除。<br>3：深度测试。</p>
 <h4 id="1-1、油画法"><a href="#1-1、油画法" class="headerlink" title="1.1、油画法"></a>1.1、油画法</h4><p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-23-15244659608381.jpg-style01" alt=""></p>
 <blockquote>
@@ -454,6 +473,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
+          
+        </div>
+      
 
       
       
@@ -463,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/23/15244572175577/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2018/02/07/15244572175577/" rel="next" title="OpenGL学习 基础渲染(二)">
+                <i class="fa fa-chevron-left"></i> OpenGL学习 基础渲染(二)
               </a>
             
           </div>
@@ -473,8 +498,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/23/15244669448720/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/09/15244691153165/" rel="prev" title="OpenGL学习 基本变化 (四)">
+                OpenGL学习 基本变化 (四) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -573,6 +598,19 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
             </nav>
           
 
@@ -611,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL学习-深度测试-三"><span class="nav-number">1.</span> <span class="nav-text">OpenGL学习 深度测试(三)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、渲染过程是中可能产生的问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、渲染过程是中可能产生的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、油画法"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1.1、油画法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、正面背面剔除"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">1.2、正面背面剔除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、什么叫深度？"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、什么叫深度？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、深度缓冲去区的作用"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、深度缓冲去区的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、如何使用深度缓冲区测试？"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、如何使用深度缓冲区测试？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、多边形模型"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、多边形模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、多边形偏移"><span class="nav-number">1.0.6.</span> <span class="nav-text">六、多边形偏移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、如何解决深度值相同，造成的冲突问题"><span class="nav-number">1.0.7.</span> <span class="nav-text">七、如何解决深度值相同，造成的冲突问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、裁剪"><span class="nav-number">1.0.8.</span> <span class="nav-text">八、裁剪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、混合"><span class="nav-number">1.0.9.</span> <span class="nav-text">九、混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-组合颜色"><span class="nav-number">1.0.9.1.</span> <span class="nav-text">9.1 组合颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-设置混合因子"><span class="nav-number">1.0.9.2.</span> <span class="nav-text">9.2 设置混合因子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-混合因子枚举列表"><span class="nav-number">1.0.9.3.</span> <span class="nav-text">9.3 混合因子枚举列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-4总结"><span class="nav-number">1.0.9.4.</span> <span class="nav-text">9.4总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十、改变组合方程式"><span class="nav-number">1.0.10.</span> <span class="nav-text">十、改变组合方程式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1-改变混合方程式的函数-glBlendEquation"><span class="nav-number">1.0.10.1.</span> <span class="nav-text">10.1 改变混合方程式的函数 glBlendEquation()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-glBlendFuncSeparate-函数"><span class="nav-number">1.0.10.2.</span> <span class="nav-text">10.2 glBlendFuncSeparate 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-glBlendFuncSeparate-注意"><span class="nav-number">1.0.10.3.</span> <span class="nav-text">10.3 glBlendFuncSeparate 注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-常量混合颜色"><span class="nav-number">1.0.10.4.</span> <span class="nav-text">10.4 常量混合颜色</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、渲染过程是中可能产生的问题"><span class="nav-number">1.</span> <span class="nav-text">一、渲染过程是中可能产生的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、油画法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、油画法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、正面背面剔除"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、正面背面剔除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、什么叫深度？"><span class="nav-number">2.</span> <span class="nav-text">二、什么叫深度？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、深度缓冲去区的作用"><span class="nav-number">3.</span> <span class="nav-text">三、深度缓冲去区的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、如何使用深度缓冲区测试？"><span class="nav-number">4.</span> <span class="nav-text">四、如何使用深度缓冲区测试？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、多边形模型"><span class="nav-number">5.</span> <span class="nav-text">五、多边形模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、多边形偏移"><span class="nav-number">6.</span> <span class="nav-text">六、多边形偏移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、如何解决深度值相同，造成的冲突问题"><span class="nav-number">7.</span> <span class="nav-text">七、如何解决深度值相同，造成的冲突问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、裁剪"><span class="nav-number">8.</span> <span class="nav-text">八、裁剪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、混合"><span class="nav-number">9.</span> <span class="nav-text">九、混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-组合颜色"><span class="nav-number">9.1.</span> <span class="nav-text">9.1 组合颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-设置混合因子"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 设置混合因子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-混合因子枚举列表"><span class="nav-number">9.3.</span> <span class="nav-text">9.3 混合因子枚举列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-4总结"><span class="nav-number">9.4.</span> <span class="nav-text">9.4总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十、改变组合方程式"><span class="nav-number">10.</span> <span class="nav-text">十、改变组合方程式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1-改变混合方程式的函数-glBlendEquation"><span class="nav-number">10.1.</span> <span class="nav-text">10.1 改变混合方程式的函数 glBlendEquation()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-glBlendFuncSeparate-函数"><span class="nav-number">10.2.</span> <span class="nav-text">10.2 glBlendFuncSeparate 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-glBlendFuncSeparate-注意"><span class="nav-number">10.3.</span> <span class="nav-text">10.3 glBlendFuncSeparate 注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-常量混合颜色"><span class="nav-number">10.4.</span> <span class="nav-text">10.4 常量混合颜色</span></a></li></ol></li></ol></div>
             
 
           </div>
