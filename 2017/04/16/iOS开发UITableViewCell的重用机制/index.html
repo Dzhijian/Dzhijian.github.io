@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="CoderDeng">
 <meta property="og:description" content="首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢. 我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当我们滑动屏幕需要浏览的时候,我们才需要它加载进来.因此,就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-23T10:09:47.345Z">
+<meta property="og:updated_time" content="2018-06-27T10:45:05.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 开发 UITableViewCell的重用机制">
 <meta name="twitter:description" content="首先,我们要明白我们为什么需要使用这种机制,其次,这种机制的原理是什么.我们先举个例子来说明.一个UITableView中有许多需要显示的cell,但是我们不可能每个都会浏览到,那么如果我们把这些数据全部都加载进去,是不是造成了内存的负担呢. 我们所能显示的区域通常只有一个屏幕的大小,那么那些屏幕之外的信息是不需要一次性全都加载完的,只有当我们滑动屏幕需要浏览的时候,我们才需要它加载进来.因此,就">
@@ -473,6 +473,35 @@
     <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2017/04/16/iOS开发UITableViewCell的重用机制/">iOS 开发 UITableViewCell的重用机制</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 CoderDeng 的个人博客">CoderDeng</a></p>
+  <p><span>发布时间:</span>2017年04月16日 - 15:04</p>
+  <p><span>最后更新:</span>2018年06月27日 - 18:06</p>
+  <p><span>原始链接:</span><a href="/2017/04/16/iOS开发UITableViewCell的重用机制/" title="iOS 开发 UITableViewCell的重用机制">http://yoursite.com/2017/04/16/iOS开发UITableViewCell的重用机制/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2017/04/16/iOS开发UITableViewCell的重用机制/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CoderDeng-非商业性使用-禁止演绎 </a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
       
     </div>
 
