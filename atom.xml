@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-03T04:00:29.634Z</updated>
+  <updated>2018-07-03T07:12:29.499Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,24 @@
     <link href="http://yoursite.com/2018/07/03/iOS%E5%BC%80%E5%8F%91-NSPredicate-%E8%B0%93%E8%AF%8D%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2018/07/03/iOS开发-NSPredicate-谓词的学习与使用/</id>
     <published>2018-07-03T04:00:29.000Z</published>
-    <updated>2018-07-03T04:00:29.634Z</updated>
+    <updated>2018-07-03T07:12:29.499Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>NSPredicate</strong><br>Cocoa 中提供了一个NSPredicate的类,该类主要用于指定过滤器的条件, 每一个对象通过谓词进行筛选,判断条件是否匹配。一种逻辑条件的定义，用于约束对获取或内存过滤的搜索。</p><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote><p>谓词表示逻辑条件，可用于筛选对象集合。虽然直接从ns比较谓词、NSCompoundPredicate和NSExpression的实例创建谓词很常见，但是您经常从格式字符串创建谓词，该格式字符串由NSPredicate上的类方法解析。谓词格式字符串的例子包括:<br>简单的比较，例如grade = “7”或firstName如”Shaffiq”<br>大小写不敏感查找，如名称包含[cd] “itroen”<br>逻辑操作，例如(firstName like“Mark”)或(lastName like“Adderley”)<br>时间范围限制，例如日期介于{ $YESTERDAY， $TOMORROW}。<br>关系条件，如group.name，如“work*”<br>聚合操作，如@sum.items。价格&lt; 1000<br>有关完整的语法引用，请参阅谓词编程指南。<br>您还可以使用evaluate(with: substitute variables:)方法创建包含变量的谓词，以便在运行时.v替换具体值之前预定义谓词</p></blockquote><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>1.<code>+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat, ...;</code><br>创建并返回一个新的谓词，该谓词通过创建一个具有给定格式的新字符串并解析结果而形成。<br>有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。</p><p>2.<code>+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat argumentArray:(nullable NSArray *)arguments;</code><br>通过将给定数组中的值替换为格式字符串并解析结果来初始化谓词。<br>有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。</p><p>3.<code>+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat arguments:(va_list)argList;</code><br>通过将参数列表中的值替换为格式字符串并解析结果来初始化谓词。<br>有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。将argList中的值替换为谓词格式并解析结果的新谓词。</p><p><code>4.+ (NSPredicate *)predicateWithValue:(BOOL)value;</code><br>创建并返回一个谓词，该谓词总是计算为给定的布尔值</p><p><code>5.+ (NSPredicate*)predicateWithBlock:(BOOL (^)(id _Nullable evaluatedObject, NSDictionary&lt;NSString *, id&gt; * _Nullable bindings))block API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0));</code><br>初始化使用指定块对象和绑定字典计算的谓词。<br>在macOS 10.6和以后版本中，核心数据支持内存和原子存储中的基于块的谓词，但不支持基于sql的存储。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><strong>使用条件字符表</strong><br><img src="/images/15306017726347.png" alt=""></p><ol><li>检索出某个范围的元素<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSArray</span> *array = @[@<span class="number">123</span>,@<span class="number">66</span>,@<span class="number">89</span>,@<span class="number">45</span>,@<span class="number">101</span>,@<span class="number">18</span>,@<span class="number">666</span>,@<span class="number">75</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSPredicate</span> *predicte = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF BETWEEN &#123;60,100&#125;"</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSArray</span> *tmp = [array filteredArrayUsingPredicate:predicte];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,tmp);</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2018-07-03 12:20:11.469946+0800 NewDemo[20729:4562901] (</span><br><span class="line">    66,</span><br><span class="line">    89,</span><br><span class="line">    75</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;&lt;strong&gt;NSPredicate&lt;/strong&gt;&lt;br&gt;Cocoa 中提供了一个NSPredicate的类,该类主要用于指定过滤器的条件, 每一个对象通过谓词进行筛选,判断条件是否匹配。一种逻辑条件的定义，用于约束对获取或内存过滤的搜索。&lt;/p&gt;
+&lt;h3 id=&quot;概
+      
+    
     </summary>
     
+      <category term="iOS开发" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="NSPredicate" scheme="http://yoursite.com/tags/NSPredicate/"/>
     
   </entry>
   

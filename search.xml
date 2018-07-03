@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[iOS开发 NSPredicate-谓词的学习与使用]]></title>
     <url>%2F2018%2F07%2F03%2FiOS%E5%BC%80%E5%8F%91-NSPredicate-%E8%B0%93%E8%AF%8D%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[NSPredicateCocoa 中提供了一个NSPredicate的类,该类主要用于指定过滤器的条件, 每一个对象通过谓词进行筛选,判断条件是否匹配。一种逻辑条件的定义，用于约束对获取或内存过滤的搜索。 概述 谓词表示逻辑条件，可用于筛选对象集合。虽然直接从ns比较谓词、NSCompoundPredicate和NSExpression的实例创建谓词很常见，但是您经常从格式字符串创建谓词，该格式字符串由NSPredicate上的类方法解析。谓词格式字符串的例子包括:简单的比较，例如grade = “7”或firstName如”Shaffiq”大小写不敏感查找，如名称包含[cd] “itroen”逻辑操作，例如(firstName like“Mark”)或(lastName like“Adderley”)时间范围限制，例如日期介于{ $YESTERDAY， $TOMORROW}。关系条件，如group.name，如“work*”聚合操作，如@sum.items。价格&lt; 1000有关完整的语法引用，请参阅谓词编程指南。您还可以使用evaluate(with: substitute variables:)方法创建包含变量的谓词，以便在运行时.v替换具体值之前预定义谓词 方法1.+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat, ...;创建并返回一个新的谓词，该谓词通过创建一个具有给定格式的新字符串并解析结果而形成。有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。 2.+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat argumentArray:(nullable NSArray *)arguments;通过将给定数组中的值替换为格式字符串并解析结果来初始化谓词。有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。 3.+ (NSPredicate *)predicateWithFormat:(NSString *)predicateFormat arguments:(va_list)argList;通过将参数列表中的值替换为格式字符串并解析结果来初始化谓词。有关格式字符串的格式和变量替换的限制的详细信息，请参阅谓词格式字符串语法。将argList中的值替换为谓词格式并解析结果的新谓词。 4.+ (NSPredicate *)predicateWithValue:(BOOL)value;创建并返回一个谓词，该谓词总是计算为给定的布尔值 5.+ (NSPredicate*)predicateWithBlock:(BOOL (^)(id _Nullable evaluatedObject, NSDictionary&lt;NSString *, id&gt; * _Nullable bindings))block API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0));初始化使用指定块对象和绑定字典计算的谓词。在macOS 10.6和以后版本中，核心数据支持内存和原子存储中的基于块的谓词，但不支持基于sql的存储。 使用使用条件字符表 检索出某个范围的元素12345678NSArray *array = @[@123,@66,@89,@45,@101,@18,@666,@75];NSPredicate *predicte = [NSPredicate predicateWithFormat:@"SELF BETWEEN &#123;60,100&#125;"];NSArray *tmp = [array filteredArrayUsingPredicate:predicte];NSLog(@"%@",tmp); 123452018-07-03 12:20:11.469946+0800 NewDemo[20729:4562901] ( 66, 89, 75)]]></content>
+      <categories>
+        <category>iOS开发</category>
+      </categories>
+      <tags>
+        <tag>NSPredicate</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[CocoaPods 创建公有库,配置podspec文件]]></title>
