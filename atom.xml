@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-02T14:22:51.038Z</updated>
+  <updated>2019-01-02T14:53:59.297Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2019my_plan</title>
+    <title>2019-新起航、新规划</title>
     <link href="http://yoursite.com/2019/01/02/2019my-plan/"/>
     <id>http://yoursite.com/2019/01/02/2019my-plan/</id>
     <published>2019-01-02T14:22:51.000Z</published>
-    <updated>2019-01-02T14:22:51.038Z</updated>
+    <updated>2019-01-02T14:53:59.297Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="个人记录" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
