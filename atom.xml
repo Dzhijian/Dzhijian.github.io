@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-02T14:53:59.297Z</updated>
+  <updated>2019-01-02T14:40:46.932Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,22 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>2019-新起航、新规划</title>
-    <link href="http://yoursite.com/2019/01/02/2019my-plan/"/>
-    <id>http://yoursite.com/2019/01/02/2019my-plan/</id>
-    <published>2019-01-02T14:22:51.000Z</published>
-    <updated>2019-01-02T14:53:59.297Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="个人记录" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>2018-年终总结</title>
@@ -520,6 +504,32 @@
     
     
       <category term="FMDB" scheme="http://yoursite.com/tags/FMDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发权限设置</title>
+    <link href="http://yoursite.com/2017/05/05/iOS%E5%BC%80%E5%8F%91%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://yoursite.com/2017/05/05/iOS开发权限设置/</id>
+    <published>2017-05-05T10:04:23.000Z</published>
+    <updated>2018-06-27T10:45:14.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 相册 --&gt;</span><br><span class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问相册&lt;/string&gt;</span><br><span class="line">&lt;!-- 相机 --&gt;</span><br><span class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问相机&lt;/string&gt;</span><br><span class="line">&lt;!-- 麦克风 --&gt;</span><br><span class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问麦克风&lt;/string&gt;</span><br><span class="line">&lt;!-- 位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 在使用期间访问位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能在使用期间访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 始终访问位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能始终访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 日历 --&gt;</span><br><span class="line">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问日历&lt;/string&gt;</span><br><span class="line">&lt;!-- 提醒事项 --&gt;</span><br><span class="line">&lt;key&gt;NSRemindersUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问提醒事项&lt;/string&gt;</span><br><span class="line">&lt;!-- 运动与健身 --&gt;</span><br><span class="line">&lt;key&gt;NSMotionUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问运动与健身&lt;/string&gt;</span><br><span class="line">&lt;!-- 健康更新 --&gt;</span><br><span class="line">&lt;key&gt;NSHealthUpdateUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问健康更新 &lt;/string&gt;</span><br><span class="line">&lt;!-- 健康分享 --&gt;</span><br><span class="line">&lt;key&gt;NSHealthShareUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问健康分享&lt;/string&gt;</span><br><span class="line">&lt;!-- 蓝牙 --&gt;</span><br><span class="line">&lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问蓝牙&lt;/string&gt;</span><br><span class="line">&lt;!-- 媒体资料库 --&gt;</span><br><span class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问媒体资料库&lt;/string&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
