@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dzhijian.github.io/"/>
-  <updated>2019-01-10T15:15:06.767Z</updated>
+  <updated>2019-01-10T17:04:29.934Z</updated>
   <id>https://dzhijian.github.io/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="https://dzhijian.github.io/2019/01/10/designpatterncommand01.html"/>
     <id>https://dzhijian.github.io/2019/01/10/designpatterncommand01.html</id>
     <published>2019-01-10T14:57:31.000Z</published>
-    <updated>2019-01-10T15:15:06.767Z</updated>
+    <updated>2019-01-10T17:04:29.934Z</updated>
+    
+    <content type="html"><![CDATA[<p>命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&lt;/p&gt;
+
+      
     
     </summary>
     
