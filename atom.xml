@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-01-10T14:57:31.331Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://dzhijian.github.io/"/>
+  <updated>2019-01-10T15:15:06.767Z</updated>
+  <id>https://dzhijian.github.io/</id>
   
   <author>
     <name>James</name>
@@ -17,23 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>designpatterncommand01</title>
-    <link href="http://yoursite.com/2019/01/10/designpatterncommand01/"/>
-    <id>http://yoursite.com/2019/01/10/designpatterncommand01/</id>
+    <title>设计模式-命令模式</title>
+    <link href="https://dzhijian.github.io/2019/01/10/designpatterncommand01.html"/>
+    <id>https://dzhijian.github.io/2019/01/10/designpatterncommand01.html</id>
     <published>2019-01-10T14:57:31.000Z</published>
-    <updated>2019-01-10T14:57:31.331Z</updated>
+    <updated>2019-01-10T15:15:06.767Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="设计模式" scheme="https://dzhijian.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式学习</title>
-    <link href="http://yoursite.com/2019/01/09/designpattern01/"/>
-    <id>http://yoursite.com/2019/01/09/designpattern01/</id>
+    <link href="https://dzhijian.github.io/2019/01/09/designpattern01.html"/>
+    <id>https://dzhijian.github.io/2019/01/09/designpattern01.html</id>
     <published>2019-01-09T15:15:49.000Z</published>
     <updated>2019-01-10T14:19:57.229Z</updated>
     
@@ -48,15 +50,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://dzhijian.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>2018-年终总结</title>
-    <link href="http://yoursite.com/2019/01/02/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2019/01/02/2018年终总结/</id>
+    <link href="https://dzhijian.github.io/2019/01/02/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
+    <id>https://dzhijian.github.io/2019/01/02/2018年终总结.html</id>
     <published>2019-01-01T17:07:52.000Z</published>
     <updated>2019-01-05T17:25:09.876Z</updated>
     
@@ -72,15 +74,15 @@
     
     </summary>
     
-      <category term="个人记录" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
+      <category term="个人记录" scheme="https://dzhijian.github.io/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>iOS开发-Socket通信原理</title>
-    <link href="http://yoursite.com/2018/09/10/iOSSocketStudy/"/>
-    <id>http://yoursite.com/2018/09/10/iOSSocketStudy/</id>
+    <link href="https://dzhijian.github.io/2018/09/10/iOSSocketStudy.html"/>
+    <id>https://dzhijian.github.io/2018/09/10/iOSSocketStudy.html</id>
     <published>2018-09-10T09:02:52.000Z</published>
     <updated>2018-09-18T03:28:33.358Z</updated>
     
@@ -97,17 +99,17 @@
     
     </summary>
     
-      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Socket" scheme="http://yoursite.com/tags/Socket/"/>
+      <category term="Socket" scheme="https://dzhijian.github.io/tags/Socket/"/>
     
   </entry>
   
   <entry>
     <title>iOS-Swif Moya(一) 网络抽象层学习</title>
-    <link href="http://yoursite.com/2018/08/10/iOS-Swift-Moya%E4%B8%80/"/>
-    <id>http://yoursite.com/2018/08/10/iOS-Swift-Moya一/</id>
+    <link href="https://dzhijian.github.io/2018/08/10/iOS-Swift-Moya%E4%B8%80.html"/>
+    <id>https://dzhijian.github.io/2018/08/10/iOS-Swift-Moya一.html</id>
     <published>2018-08-10T05:06:12.000Z</published>
     <updated>2018-08-30T05:11:02.536Z</updated>
     
@@ -122,17 +124,17 @@
     
     </summary>
     
-      <category term="Swift" scheme="http://yoursite.com/categories/Swift/"/>
+      <category term="Swift" scheme="https://dzhijian.github.io/categories/Swift/"/>
     
     
-      <category term="Moya" scheme="http://yoursite.com/tags/Moya/"/>
+      <category term="Moya" scheme="https://dzhijian.github.io/tags/Moya/"/>
     
   </entry>
   
   <entry>
     <title>CSS样式学习笔记(一)</title>
-    <link href="http://yoursite.com/2018/07/23/CSS-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
-    <id>http://yoursite.com/2018/07/23/CSS-学习笔记-一/</id>
+    <link href="https://dzhijian.github.io/2018/07/23/CSS-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80.html"/>
+    <id>https://dzhijian.github.io/2018/07/23/CSS-学习笔记-一.html</id>
     <published>2018-07-23T09:28:21.000Z</published>
     <updated>2018-07-23T09:35:43.000Z</updated>
     
@@ -147,17 +149,17 @@
     
     </summary>
     
-      <category term="CSS样式" scheme="http://yoursite.com/categories/CSS%E6%A0%B7%E5%BC%8F/"/>
+      <category term="CSS样式" scheme="https://dzhijian.github.io/categories/CSS%E6%A0%B7%E5%BC%8F/"/>
     
     
-      <category term="CSS样式" scheme="http://yoursite.com/tags/CSS%E6%A0%B7%E5%BC%8F/"/>
+      <category term="CSS样式" scheme="https://dzhijian.github.io/tags/CSS%E6%A0%B7%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>iOS开发 蓝牙通信基础知识(一)</title>
-    <link href="http://yoursite.com/2018/07/03/iOS%E5%BC%80%E5%8F%91-%E8%93%9D%E7%89%99%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://yoursite.com/2018/07/03/iOS开发-蓝牙通信基础知识/</id>
+    <link href="https://dzhijian.github.io/2018/07/03/iOS%E5%BC%80%E5%8F%91-%E8%93%9D%E7%89%99%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html"/>
+    <id>https://dzhijian.github.io/2018/07/03/iOS开发-蓝牙通信基础知识.html</id>
     <published>2018-07-03T10:17:53.000Z</published>
     <updated>2018-07-03T10:23:28.212Z</updated>
     
@@ -173,17 +175,17 @@
     
     </summary>
     
-      <category term="iOS开发" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS开发" scheme="https://dzhijian.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="蓝牙" scheme="http://yoursite.com/tags/%E8%93%9D%E7%89%99/"/>
+      <category term="蓝牙" scheme="https://dzhijian.github.io/tags/%E8%93%9D%E7%89%99/"/>
     
   </entry>
   
   <entry>
     <title>iOS开发 NSPredicate-谓词的学习与使用</title>
-    <link href="http://yoursite.com/2018/07/03/iOS%E5%BC%80%E5%8F%91-NSPredicate-%E8%B0%93%E8%AF%8D%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/03/iOS开发-NSPredicate-谓词的学习与使用/</id>
+    <link href="https://dzhijian.github.io/2018/07/03/iOS%E5%BC%80%E5%8F%91-NSPredicate-%E8%B0%93%E8%AF%8D%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://dzhijian.github.io/2018/07/03/iOS开发-NSPredicate-谓词的学习与使用.html</id>
     <published>2018-07-03T04:00:29.000Z</published>
     <updated>2018-07-03T07:12:29.499Z</updated>
     
@@ -199,17 +201,17 @@
     
     </summary>
     
-      <category term="iOS开发" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS开发" scheme="https://dzhijian.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="NSPredicate" scheme="http://yoursite.com/tags/NSPredicate/"/>
+      <category term="NSPredicate" scheme="https://dzhijian.github.io/tags/NSPredicate/"/>
     
   </entry>
   
   <entry>
     <title>CocoaPods 创建公有库,配置podspec文件</title>
-    <link href="http://yoursite.com/2018/06/19/CocoaPods-%E5%88%9B%E5%BB%BA%E5%85%AC%E6%9C%89%E5%BA%93-%E9%85%8D%E7%BD%AEpodspec%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2018/06/19/CocoaPods-创建公有库-配置podspec文件/</id>
+    <link href="https://dzhijian.github.io/2018/06/19/CocoaPods-%E5%88%9B%E5%BB%BA%E5%85%AC%E6%9C%89%E5%BA%93-%E9%85%8D%E7%BD%AEpodspec%E6%96%87%E4%BB%B6.html"/>
+    <id>https://dzhijian.github.io/2018/06/19/CocoaPods-创建公有库-配置podspec文件.html</id>
     <published>2018-06-19T09:13:08.000Z</published>
     <updated>2018-06-19T09:14:28.165Z</updated>
     
@@ -228,17 +230,17 @@
     
     </summary>
     
-      <category term="CocoaPods" scheme="http://yoursite.com/categories/CocoaPods/"/>
+      <category term="CocoaPods" scheme="https://dzhijian.github.io/categories/CocoaPods/"/>
     
     
-      <category term="CocoaPods" scheme="http://yoursite.com/tags/CocoaPods/"/>
+      <category term="CocoaPods" scheme="https://dzhijian.github.io/tags/CocoaPods/"/>
     
   </entry>
   
   <entry>
     <title>iOS开发 UIBezierPath学习</title>
-    <link href="http://yoursite.com/2018/06/16/iOS%E5%BC%80%E5%8F%91-UIBezierPath%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2018/06/16/iOS开发-UIBezierPath学习/</id>
+    <link href="https://dzhijian.github.io/2018/06/16/iOS%E5%BC%80%E5%8F%91-UIBezierPath%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://dzhijian.github.io/2018/06/16/iOS开发-UIBezierPath学习.html</id>
     <published>2018-06-15T16:48:07.000Z</published>
     <updated>2018-06-15T16:49:42.325Z</updated>
     
@@ -253,17 +255,17 @@
     
     </summary>
     
-      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="UIBezierPath" scheme="http://yoursite.com/tags/UIBezierPath/"/>
+      <category term="UIBezierPath" scheme="https://dzhijian.github.io/tags/UIBezierPath/"/>
     
   </entry>
   
   <entry>
     <title>iOS开发NSString详解</title>
-    <link href="http://yoursite.com/2018/06/13/iOS%E5%BC%80%E5%8F%91NSString%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://yoursite.com/2018/06/13/iOS开发NSString详解/</id>
+    <link href="https://dzhijian.github.io/2018/06/13/iOS%E5%BC%80%E5%8F%91NSString%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://dzhijian.github.io/2018/06/13/iOS开发NSString详解.html</id>
     <published>2018-06-13T10:52:43.000Z</published>
     <updated>2018-06-14T09:35:31.399Z</updated>
     
@@ -279,19 +281,19 @@
     
     </summary>
     
-      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/"/>
     
-      <category term="基础知识" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="基础知识" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
-      <category term="NSString" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NSString/"/>
+      <category term="NSString" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NSString/"/>
     
     
   </entry>
   
   <entry>
     <title>iOS开发本地推送UILocalNotification</title>
-    <link href="http://yoursite.com/2018/06/11/iOS%E5%BC%80%E5%8F%91%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81UILocalNotification/"/>
-    <id>http://yoursite.com/2018/06/11/iOS开发本地推送UILocalNotification/</id>
+    <link href="https://dzhijian.github.io/2018/06/11/iOS%E5%BC%80%E5%8F%91%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81UILocalNotification.html"/>
+    <id>https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html</id>
     <published>2018-06-10T16:39:27.000Z</published>
     <updated>2018-06-14T09:34:40.254Z</updated>
     
@@ -306,19 +308,19 @@
     
     </summary>
     
-      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="本地推送" scheme="http://yoursite.com/tags/%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81/"/>
+      <category term="本地推送" scheme="https://dzhijian.github.io/tags/%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81/"/>
     
-      <category term="UILocalNotification" scheme="http://yoursite.com/tags/UILocalNotification/"/>
+      <category term="UILocalNotification" scheme="https://dzhijian.github.io/tags/UILocalNotification/"/>
     
   </entry>
   
   <entry>
     <title>001- 初识汇编</title>
-    <link href="http://yoursite.com/2018/04/20/001-%E5%88%9D%E8%AF%86%E6%B1%87%E7%BC%96/"/>
-    <id>http://yoursite.com/2018/04/20/001-初识汇编/</id>
+    <link href="https://dzhijian.github.io/2018/04/20/001-%E5%88%9D%E8%AF%86%E6%B1%87%E7%BC%96.html"/>
+    <id>https://dzhijian.github.io/2018/04/20/001-初识汇编.html</id>
     <published>2018-04-20T15:59:03.000Z</published>
     <updated>2018-06-27T10:44:54.732Z</updated>
     
@@ -333,19 +335,19 @@
     
     </summary>
     
-      <category term="汇编" scheme="http://yoursite.com/categories/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="https://dzhijian.github.io/categories/%E6%B1%87%E7%BC%96/"/>
     
-      <category term="安全攻防" scheme="http://yoursite.com/categories/%E6%B1%87%E7%BC%96/%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/"/>
+      <category term="安全攻防" scheme="https://dzhijian.github.io/categories/%E6%B1%87%E7%BC%96/%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/"/>
     
     
-      <category term="安全攻防" scheme="http://yoursite.com/tags/%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/"/>
+      <category term="安全攻防" scheme="https://dzhijian.github.io/tags/%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 纹理下(五)</title>
-    <link href="http://yoursite.com/2018/02/15/OpenGL%20%E7%BA%B9%E7%90%86%E4%B8%8B%EF%BC%88%E4%BA%94%EF%BC%89/"/>
-    <id>http://yoursite.com/2018/02/15/OpenGL 纹理下（五）/</id>
+    <link href="https://dzhijian.github.io/2018/02/15/OpenGL%20%E7%BA%B9%E7%90%86%E4%B8%8B%EF%BC%88%E4%BA%94%EF%BC%89.html"/>
+    <id>https://dzhijian.github.io/2018/02/15/OpenGL 纹理下（五）.html</id>
     <published>2018-02-15T12:05:40.000Z</published>
     <updated>2018-06-27T10:49:20.985Z</updated>
     
@@ -357,17 +359,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 纹理上(五)</title>
-    <link href="http://yoursite.com/2018/02/11/15244707402194/"/>
-    <id>http://yoursite.com/2018/02/11/15244707402194/</id>
+    <link href="https://dzhijian.github.io/2018/02/11/15244707402194.html"/>
+    <id>https://dzhijian.github.io/2018/02/11/15244707402194.html</id>
     <published>2018-02-11T12:05:40.000Z</published>
     <updated>2018-06-27T10:45:24.951Z</updated>
     
@@ -379,17 +381,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 基本变化 (四)</title>
-    <link href="http://yoursite.com/2018/02/09/15244691153165/"/>
-    <id>http://yoursite.com/2018/02/09/15244691153165/</id>
+    <link href="https://dzhijian.github.io/2018/02/09/15244691153165.html"/>
+    <id>https://dzhijian.github.io/2018/02/09/15244691153165.html</id>
     <published>2018-02-09T15:38:35.000Z</published>
     <updated>2018-06-27T10:45:28.673Z</updated>
     
@@ -406,17 +408,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 深度测试(三)</title>
-    <link href="http://yoursite.com/2018/02/08/15244657893765/"/>
-    <id>http://yoursite.com/2018/02/08/15244657893765/</id>
+    <link href="https://dzhijian.github.io/2018/02/08/15244657893765.html"/>
+    <id>https://dzhijian.github.io/2018/02/08/15244657893765.html</id>
     <published>2018-02-08T14:43:09.000Z</published>
     <updated>2018-06-27T10:45:31.886Z</updated>
     
@@ -431,17 +433,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 基础渲染(二)</title>
-    <link href="http://yoursite.com/2018/02/07/15244572175577/"/>
-    <id>http://yoursite.com/2018/02/07/15244572175577/</id>
+    <link href="https://dzhijian.github.io/2018/02/07/15244572175577.html"/>
+    <id>https://dzhijian.github.io/2018/02/07/15244572175577.html</id>
     <published>2018-02-07T15:20:17.000Z</published>
     <updated>2018-06-27T10:45:35.483Z</updated>
     
@@ -457,17 +459,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>OpenGL学习 在Mac上搭建OpenGL环境(一)</title>
-    <link href="http://yoursite.com/2018/02/05/15244567239248/"/>
-    <id>http://yoursite.com/2018/02/05/15244567239248/</id>
+    <link href="https://dzhijian.github.io/2018/02/05/15244567239248.html"/>
+    <id>https://dzhijian.github.io/2018/02/05/15244567239248.html</id>
     <published>2018-02-05T15:12:43.000Z</published>
     <updated>2018-06-27T10:45:40.919Z</updated>
     
@@ -487,17 +489,17 @@
     
     </summary>
     
-      <category term="OpenGL" scheme="http://yoursite.com/categories/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/categories/OpenGL/"/>
     
     
-      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+      <category term="OpenGL" scheme="https://dzhijian.github.io/tags/OpenGL/"/>
     
   </entry>
   
   <entry>
     <title>iOS 开发 CADisplayLink 定时器的了解与使用</title>
-    <link href="http://yoursite.com/2017/09/19/iOS%E5%BC%80%E5%8F%91CADisplayLink-%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E4%BA%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/09/19/iOS开发CADisplayLink-定时器的了解与使用/</id>
+    <link href="https://dzhijian.github.io/2017/09/19/iOS%E5%BC%80%E5%8F%91CADisplayLink-%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E4%BA%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://dzhijian.github.io/2017/09/19/iOS开发CADisplayLink-定时器的了解与使用.html</id>
     <published>2017-09-19T13:28:05.000Z</published>
     <updated>2018-06-27T10:45:10.258Z</updated>
     
@@ -512,10 +514,10 @@
     
     </summary>
     
-      <category term="iOS 开发" scheme="http://yoursite.com/categories/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/categories/iOS-%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS 开发" scheme="https://dzhijian.github.io/tags/iOS-%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
