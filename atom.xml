@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dzhijian.github.io/"/>
-  <updated>2019-01-12T09:21:59.677Z</updated>
+  <updated>2019-01-12T09:23:08.295Z</updated>
   <id>https://dzhijian.github.io/</id>
   
   <author>
@@ -17,15 +17,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>designpatterncommand02</title>
+    <title>设计模式-命令模式具体案例分析（二）</title>
     <link href="https://dzhijian.github.io/2019/01/12/designpatterncommand02.html"/>
     <id>https://dzhijian.github.io/2019/01/12/designpatterncommand02.html</id>
     <published>2019-01-12T09:21:59.000Z</published>
-    <updated>2019-01-12T09:21:59.677Z</updated>
+    <updated>2019-01-12T09:23:08.295Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="设计模式" scheme="https://dzhijian.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>

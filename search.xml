@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[designpatterncommand02]]></title>
+    <title><![CDATA[设计模式-命令模式具体案例分析（二）]]></title>
     <url>%2F2019%2F01%2F12%2Fdesignpatterncommand02.html</url>
     <content type="text"></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[设计模式-命令模式原理分析（一）]]></title>
