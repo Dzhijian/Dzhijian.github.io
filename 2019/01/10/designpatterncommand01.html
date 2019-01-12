@@ -105,17 +105,17 @@
 
 
 
-  <meta name="description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。第四步：分析单个角色类结构第五步：">
+  <meta name="description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。   第四步：分析单个角色类结构第">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式-命令模式">
+<meta property="og:title" content="设计模式-命令模式原理分析（一）">
 <meta property="og:url" content="https://dzhijian.github.io/2019/01/10/designpatterncommand01.html">
 <meta property="og:site_name" content="James">
-<meta property="og:description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。第四步：分析单个角色类结构第五步：">
+<meta property="og:description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。   第四步：分析单个角色类结构第">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-12T08:41:37.106Z">
+<meta property="og:updated_time" content="2019-01-12T08:50:29.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式-命令模式">
-<meta name="twitter:description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。第四步：分析单个角色类结构第五步：">
+<meta name="twitter:title" content="设计模式-命令模式原理分析（一）">
+<meta name="twitter:description" content="架构学习经验分析架构，已学习架构的方法来学习设计模式，学的主要是思想第一步：了解基本概念第二步：确定架构模式第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个  例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。   第四步：分析单个角色类结构第">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>设计模式-命令模式 | James</title>
+  <title>设计模式-命令模式原理分析（一） | James</title>
   
 
 
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式-命令模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式-命令模式原理分析（一）</h1>
         
 
         <div class="post-meta">
@@ -438,8 +438,9 @@
       
         <h3 id="架构学习经验"><a href="#架构学习经验" class="headerlink" title="架构学习经验"></a>架构学习经验</h3><p>分析架构，已学习架构的方法来学习设计模式，学的主要是思想<br>第一步：了解基本概念<br>第二步：确定架构模式<br>第二步：分析角色：每一个设计模式里面都有角色的划分，不同的场景下，角色不同，一个类担当的角色会是多个</p>
 <blockquote>
-<p>例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。<br>第四步：分析单个角色类结构<br>第五步：分析单个角色意义（子类意义所在）<br>第六步：分析模块<br>第七步：性能优化问题</p>
+<p>例如: User 类，可以是一个具体产品类，抽象产品类。在架构设计中，存在多种角色划分。要看它到底属于哪一种模式，属于哪一种模式就属于哪一种模式下的角色。 </p>
 </blockquote>
+<p>第四步：分析单个角色类结构<br>第五步：分析单个角色意义（子类意义所在）<br>第六步：分析模块<br>第七步：性能优化问题</p>
 <h3 id="命令模式（Command-Pattern）"><a href="#命令模式（Command-Pattern）" class="headerlink" title="命令模式（Command Pattern）"></a>命令模式（Command Pattern）</h3><p>命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
 <p>第一点：将一个请求封装成为一个对象，从而让用户使用不同的的请求将客户端参数化。<br>第二点：对请求排队或者记录请求日志，以及及时撤销操作</p>
 <p>让我们的程序扩张性更好，耦合度降低了。</p>
@@ -456,7 +457,14 @@
 接着：实现接收者
 最后：实现命令角色
 </code></pre></blockquote>
-<h4 id="具体案例"><a href="#具体案例" class="headerlink" title="具体案例"></a>具体案例</h4><p>每一个角色之间的关系与调用</p>
+<h5 id="调用实现"><a href="#调用实现" class="headerlink" title="调用实现"></a>调用实现</h5><ol>
+<li>创建接受者对象</li>
+<li>创建命令对象</li>
+<li>创建请求者对象</li>
+<li>执行命令</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    // 原理案例</span><br><span class="line">    [self commandPatternTheoryTest];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - 命令模式-原理案例</span><br><span class="line">-(void)commandPatternTheoryTest&#123;</span><br><span class="line">    </span><br><span class="line">    //  创建接受者</span><br><span class="line">    Receiver *receiver = [[Receiver alloc]init];</span><br><span class="line">    </span><br><span class="line">    // 创建命令对象</span><br><span class="line">    ConcreteCommand *concreteCom = [[ConcreteCommand alloc]initWithRecevicer:receiver];</span><br><span class="line">    </span><br><span class="line">    // 创建请求者对象</span><br><span class="line">    Invoker *invoker = [[Invoker alloc]initConcreteCommand:concreteCom];</span><br><span class="line">    </span><br><span class="line">    // 执行命令</span><br><span class="line">    [invoker concreteCommand];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Demo-下载"><a href="#Demo-下载" class="headerlink" title="Demo 下载"></a>Demo 下载</h3><p><a href="https://github.com/Dzhijian/ZJDesignPatternStudy" target="_blank" rel="noopener">点击获取Demo</a></p>
 
       
     </div>
@@ -476,11 +484,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/01/10/designpatterncommand01.html">设计模式-命令模式</a></p>
+  <p><span>本文标题:</span><a href="/2019/01/10/designpatterncommand01.html">设计模式-命令模式原理分析（一）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
   <p><span>发布时间:</span>2019年01月10日 - 22:01</p>
   <p><span>最后更新:</span>2019年01月12日 - 16:01</p>
-  <p><span>原始链接:</span><a href="/2019/01/10/designpatterncommand01.html" title="设计模式-命令模式">https://dzhijian.github.io/2019/01/10/designpatterncommand01.html</a>
+  <p><span>原始链接:</span><a href="/2019/01/10/designpatterncommand01.html" title="设计模式-命令模式原理分析（一）">https://dzhijian.github.io/2019/01/10/designpatterncommand01.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2019/01/10/designpatterncommand01.html"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">James-非商业性使用-禁止演绎 </a> 转载请保留原文链接及作者。</p>  
@@ -750,7 +758,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构学习经验"><span class="nav-number">1.</span> <span class="nav-text">架构学习经验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式（Command-Pattern）"><span class="nav-number">2.</span> <span class="nav-text">命令模式（Command Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式角色划分"><span class="nav-number">4.</span> <span class="nav-text">命令模式角色划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式案例"><span class="nav-number">5.</span> <span class="nav-text">命令模式案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理案例"><span class="nav-number">5.1.</span> <span class="nav-text">原理案例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-角色一：接收者-gt-Receiver"><span class="nav-number">5.1.1.</span> <span class="nav-text">1.角色一：接收者 -&gt; Receiver</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-角色三：具体命令-gt-ConcreteCommand"><span class="nav-number">5.1.2.</span> <span class="nav-text">3.角色三：具体命令 -&gt; ConcreteCommand</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-角色四：请求者-gt-invoker"><span class="nav-number">5.1.3.</span> <span class="nav-text">4.角色四：请求者 -&gt; invoker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关联角色"><span class="nav-number">5.1.4.</span> <span class="nav-text">关联角色</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体案例"><span class="nav-number">5.2.</span> <span class="nav-text">具体案例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构学习经验"><span class="nav-number">1.</span> <span class="nav-text">架构学习经验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式（Command-Pattern）"><span class="nav-number">2.</span> <span class="nav-text">命令模式（Command Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式角色划分"><span class="nav-number">4.</span> <span class="nav-text">命令模式角色划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式案例"><span class="nav-number">5.</span> <span class="nav-text">命令模式案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理案例"><span class="nav-number">5.1.</span> <span class="nav-text">原理案例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-角色一：接收者-gt-Receiver"><span class="nav-number">5.1.1.</span> <span class="nav-text">1.角色一：接收者 -&gt; Receiver</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-角色三：具体命令-gt-ConcreteCommand"><span class="nav-number">5.1.2.</span> <span class="nav-text">3.角色三：具体命令 -&gt; ConcreteCommand</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-角色四：请求者-gt-invoker"><span class="nav-number">5.1.3.</span> <span class="nav-text">4.角色四：请求者 -&gt; invoker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关联角色"><span class="nav-number">5.1.4.</span> <span class="nav-text">关联角色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用实现"><span class="nav-number">5.1.5.</span> <span class="nav-text">调用实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo-下载"><span class="nav-number">6.</span> <span class="nav-text">Demo 下载</span></a></li></ol></div>
             
 
           </div>
