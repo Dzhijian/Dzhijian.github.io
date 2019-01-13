@@ -105,14 +105,17 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="对于第一讲的命令模式的原理分析可能大家会感到懵懵懂懂，下面我们通过一个俄罗斯方块的案例的实践一下。 俄罗斯方块案例在使用每一个模式之前，我们都要先对功能角色进行分析，每一个操作都是一个命令，左命令、右命令、变形命令等等。 俄罗斯方块的角色分析有角色一：命令接口（抽象命令）TMCommandProtocol角色二：具体命令 1. 向左命令 -&amp;gt; TMLeftCommand 2. 向右命令 -&amp;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="设计模式-命令模式具体案例分析（二）">
 <meta property="og:url" content="https://dzhijian.github.io/2019/01/12/designpatterncommand02.html">
 <meta property="og:site_name" content="James">
+<meta property="og:description" content="对于第一讲的命令模式的原理分析可能大家会感到懵懵懂懂，下面我们通过一个俄罗斯方块的案例的实践一下。 俄罗斯方块案例在使用每一个模式之前，我们都要先对功能角色进行分析，每一个操作都是一个命令，左命令、右命令、变形命令等等。 俄罗斯方块的角色分析有角色一：命令接口（抽象命令）TMCommandProtocol角色二：具体命令 1. 向左命令 -&amp;gt; TMLeftCommand 2. 向右命令 -&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-12T09:23:08.295Z">
+<meta property="og:updated_time" content="2019-01-12T14:16:22.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-命令模式具体案例分析（二）">
+<meta name="twitter:description" content="对于第一讲的命令模式的原理分析可能大家会感到懵懵懂懂，下面我们通过一个俄罗斯方块的案例的实践一下。 俄罗斯方块案例在使用每一个模式之前，我们都要先对功能角色进行分析，每一个操作都是一个命令，左命令、右命令、变形命令等等。 俄罗斯方块的角色分析有角色一：命令接口（抽象命令）TMCommandProtocol角色二：具体命令 1. 向左命令 -&amp;gt; TMLeftCommand 2. 向右命令 -&amp;">
 
 
 
@@ -433,7 +436,15 @@
       
 
       
-        
+        <p>对于第一讲的命令模式的原理分析可能大家会感到懵懵懂懂，下面我们通过一个俄罗斯方块的案例的实践一下。</p>
+<h3 id="俄罗斯方块案例"><a href="#俄罗斯方块案例" class="headerlink" title="俄罗斯方块案例"></a>俄罗斯方块案例</h3><p>在使用每一个模式之前，我们都要先对功能角色进行分析，每一个操作都是一个命令，左命令、右命令、变形命令等等。</p>
+<p>俄罗斯方块的角色分析有<br>角色一：命令接口（抽象命令）TMCommandProtocol<br>角色二：具体命令</p>
+<pre><code>1. 向左命令 -&gt; TMLeftCommand
+2. 向右命令 -&gt; TMRightCommand
+3. 变形命令 -&gt; TMTransformCommand 
+....
+</code></pre><p>角色三：接收者 -&gt; TetrisMachine<br>角色四：请求者 -&gt;命令管理器 TetrisMachineManager </p>
+
       
     </div>
 
@@ -455,7 +466,7 @@
   <p><span>本文标题:</span><a href="/2019/01/12/designpatterncommand02.html">设计模式-命令模式具体案例分析（二）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
   <p><span>发布时间:</span>2019年01月12日 - 17:01</p>
-  <p><span>最后更新:</span>2019年01月12日 - 17:01</p>
+  <p><span>最后更新:</span>2019年01月12日 - 22:01</p>
   <p><span>原始链接:</span><a href="/2019/01/12/designpatterncommand02.html" title="设计模式-命令模式具体案例分析（二）">https://dzhijian.github.io/2019/01/12/designpatterncommand02.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2019/01/12/designpatterncommand02.html"  aria-label="复制成功！"></i></span>
   </p>
@@ -557,8 +568,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -707,6 +727,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#俄罗斯方块案例"><span class="nav-number">1.</span> <span class="nav-text">俄罗斯方块案例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
