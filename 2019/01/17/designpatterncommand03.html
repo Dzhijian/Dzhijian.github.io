@@ -105,18 +105,14 @@
 
 
 
-  <meta name="description" content="iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用 123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!-- 相册 --&amp;gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&amp;lt;string&amp;gt;App需要您的同意,才能">
-<meta name="keywords" content="iOS 开发">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS开发权限设置">
-<meta property="og:url" content="https://dzhijian.github.io/2017/05/05/iOS开发权限设置.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="designpatterncommand03">
+<meta property="og:url" content="https://dzhijian.github.io/2019/01/17/designpatterncommand03.html">
 <meta property="og:site_name" content="James">
-<meta property="og:description" content="iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用 123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!-- 相册 --&amp;gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&amp;lt;string&amp;gt;App需要您的同意,才能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T10:45:14.095Z">
+<meta property="og:updated_time" content="2019-01-17T14:58:28.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS开发权限设置">
-<meta name="twitter:description" content="iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用 123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!-- 相册 --&amp;gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&amp;lt;string&amp;gt;App需要您的同意,才能">
+<meta name="twitter:title" content="designpatterncommand03">
 
 
 
@@ -125,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://dzhijian.github.io/2017/05/05/iOS开发权限设置.html"/>
+  <link rel="canonical" href="https://dzhijian.github.io/2019/01/17/designpatterncommand03.html"/>
 
 
 
@@ -135,7 +131,7 @@
   };
 </script>
 
-  <title>iOS开发权限设置 | James</title>
+  <title>designpatterncommand03 | James</title>
   
 
 
@@ -353,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dzhijian.github.io/2017/05/05/iOS开发权限设置.html">
+    <link itemprop="mainEntityOfPage" href="https://dzhijian.github.io/2019/01/17/designpatterncommand03.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="James">
@@ -370,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS开发权限设置</h1>
+          <h1 class="post-title" itemprop="name headline">designpatterncommand03</h1>
         
 
         <div class="post-meta">
@@ -382,7 +378,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-05T18:04:23+08:00">2017-05-05</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-17T22:58:28+08:00">2019-01-17</time>
             
 
             
@@ -391,24 +387,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS-开发/" itemprop="url" rel="index"><span itemprop="name">iOS 开发</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -437,9 +415,7 @@
       
 
       
-        <p>iOS 8.0之后调用系统的API需要配置相关的配置信息才能正常使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 相册 --&gt;</span><br><span class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问相册&lt;/string&gt;</span><br><span class="line">&lt;!-- 相机 --&gt;</span><br><span class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问相机&lt;/string&gt;</span><br><span class="line">&lt;!-- 麦克风 --&gt;</span><br><span class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问麦克风&lt;/string&gt;</span><br><span class="line">&lt;!-- 位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 在使用期间访问位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能在使用期间访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 始终访问位置 --&gt;</span><br><span class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能始终访问位置&lt;/string&gt;</span><br><span class="line">&lt;!-- 日历 --&gt;</span><br><span class="line">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问日历&lt;/string&gt;</span><br><span class="line">&lt;!-- 提醒事项 --&gt;</span><br><span class="line">&lt;key&gt;NSRemindersUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问提醒事项&lt;/string&gt;</span><br><span class="line">&lt;!-- 运动与健身 --&gt;</span><br><span class="line">&lt;key&gt;NSMotionUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问运动与健身&lt;/string&gt;</span><br><span class="line">&lt;!-- 健康更新 --&gt;</span><br><span class="line">&lt;key&gt;NSHealthUpdateUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问健康更新 &lt;/string&gt;</span><br><span class="line">&lt;!-- 健康分享 --&gt;</span><br><span class="line">&lt;key&gt;NSHealthShareUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问健康分享&lt;/string&gt;</span><br><span class="line">&lt;!-- 蓝牙 --&gt;</span><br><span class="line">&lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问蓝牙&lt;/string&gt;</span><br><span class="line">&lt;!-- 媒体资料库 --&gt;</span><br><span class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意,才能访问媒体资料库&lt;/string&gt;</span><br></pre></td></tr></table></figure>
-
+        
       
     </div>
 
@@ -452,35 +428,6 @@
     <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2017/05/05/iOS开发权限设置.html">iOS开发权限设置</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
-  <p><span>发布时间:</span>2017年05月05日 - 18:05</p>
-  <p><span>最后更新:</span>2018年06月27日 - 18:06</p>
-  <p><span>原始链接:</span><a href="/2017/05/05/iOS开发权限设置.html" title="iOS开发权限设置">https://dzhijian.github.io/2017/05/05/iOS开发权限设置.html</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2017/05/05/iOS开发权限设置.html"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">James-非商业性使用-禁止演绎 </a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-    $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "",   
-          text: '复制成功',
-          icon: "success", 
-          showConfirmButton: true
-          });
-	});
-    });  
-</script>
-
       
     </div>
 
@@ -492,12 +439,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS-开发/" rel="tag"><i class="fa fa-tag"></i> iOS 开发</a>
-          
-        </div>
-      
 
       
       
@@ -507,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/iOS开发UITableViewCell的重用机制.html" rel="next" title="iOS 开发 UITableViewCell的重用机制">
-                <i class="fa fa-chevron-left"></i> iOS 开发 UITableViewCell的重用机制
+              <a href="/2019/01/12/designpatterncommand02.html" rel="next" title="设计模式-命令模式具体案例分析（二）">
+                <i class="fa fa-chevron-left"></i> 设计模式-命令模式具体案例分析（二）
               </a>
             
           </div>
@@ -516,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/27/FMDB-数据库简单基本操作.html" rel="prev" title="FMDB 数据库简单基本操作">
-                FMDB 数据库简单基本操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
