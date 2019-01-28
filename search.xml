@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[designpatterncommand04]]></title>
+    <title><![CDATA[设计模式-命令模式-泛型命令、复合命令、多线程并发处理、闭包命令（四)]]></title>
     <url>%2F2019%2F01%2F28%2Fdesignpatterncommand04.html</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[泛型命令]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>命令模式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式-命令模式-动态命令（三)]]></title>
@@ -12,6 +18,9 @@
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>命令模式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式-命令模式具体案例分析（二）]]></title>
@@ -20,6 +29,9 @@
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>命令模式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式-命令模式原理分析（一）]]></title>
@@ -28,6 +40,9 @@
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>命令模式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式学习]]></title>
