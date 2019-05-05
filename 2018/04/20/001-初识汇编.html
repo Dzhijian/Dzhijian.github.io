@@ -113,26 +113,26 @@
 <meta property="og:site_name" content="James">
 <meta property="og:description" content="我们在学习逆向开发之前,我们要了解一个基本的逆向原理.首先我们是逆向iOS系统上面的APP.那么我们知道,一个APP安装在手机上面的可执行文件本质上是二进制文件.因为iPhone手机本质上执行的指令是二进制.是由手机上的CPU执行的.所以逆向开发是建立在分析二进制上面.所以今天我们接下来的课程从非常基础的东西开始讲解. 汇编语言的发展机器语言 由0和1组成的机器指令.   加：0100 0000">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247619245714.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247619726174.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620013282.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620275065.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620691639.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247621338263.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247621451257.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622018451.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622662488.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622844191.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622924501.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623206581.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623385765.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623516661.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623786930.jpg-style02">
-<meta property="og:updated_time" content="2018-06-27T10:44:54.732Z">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247619245714.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247619726174.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247620013282.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247620275065.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247620691639.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247621338263.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247621451257.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247622018451.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247622662488.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247622844191.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247622924501.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247623206581.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247623385765.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247623516661.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-04-28-15247623786930.jpg-style02">
+<meta property="og:updated_time" content="2019-05-05T16:17:48.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="001- 初识汇编">
 <meta name="twitter:description" content="我们在学习逆向开发之前,我们要了解一个基本的逆向原理.首先我们是逆向iOS系统上面的APP.那么我们知道,一个APP安装在手机上面的可执行文件本质上是二进制文件.因为iPhone手机本质上执行的指令是二进制.是由手机上的CPU执行的.所以逆向开发是建立在分析二进制上面.所以今天我们接下来的课程从非常基础的东西开始讲解. 汇编语言的发展机器语言 由0和1组成的机器指令.   加：0100 0000">
-<meta name="twitter:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247619245714.jpg-style02">
+<meta name="twitter:image" content="http://image.coderdeng.xyz/2018-04-28-15247619245714.jpg-style02">
 
 
 
@@ -489,7 +489,7 @@
 <li>乘：A*B     通过编译器            1111 0111 1110 0000</li>
 <li>除：A/B        通过编译器            1111 0111 1111 0000</li>
 </ul>
-<p>我们的代码在终端设备上是这样的过程:<br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247619245714.jpg-style02" alt=""></p>
+<p>我们的代码在终端设备上是这样的过程:<br><img src="http://image.coderdeng.xyz/2018-04-28-15247619245714.jpg-style02" alt=""></p>
 <ul>
 <li><strong>汇编语言</strong>与<strong>机器语言</strong>一一对应，每一条机器指令都有与之对应的汇编指令</li>
 <li><strong>汇编语言</strong>可以通过编译得到<strong>机器语言</strong>，<strong>机器语言</strong>可以通过反汇编得到<strong>汇编语言</strong></li>
@@ -573,11 +573,11 @@
 </table>
 <h3 id="几个必要的常识"><a href="#几个必要的常识" class="headerlink" title="几个必要的常识"></a>几个必要的常识</h3><ul>
 <li>要想学好汇编,首先需要了解CPU等硬件结构</li>
-<li>APP/程序的执行过程<br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247619726174.jpg-style02" alt=""></li>
+<li>APP/程序的执行过程<br><img src="http://image.coderdeng.xyz/2018-04-28-15247619726174.jpg-style02" alt=""></li>
 <li>硬件相关最为重要是CPU/内存</li>
 <li>在汇编中,大部分指令都是和CPU与内存相关的</li>
 </ul>
-<h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620013282.jpg-style02" alt=""><br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620275065.jpg-style02" alt=""></p>
+<h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p><img src="http://image.coderdeng.xyz/2018-04-28-15247620013282.jpg-style02" alt=""><br><img src="http://image.coderdeng.xyz/2018-04-28-15247620275065.jpg-style02" alt=""></p>
 <ul>
 <li>每一个CPU芯片都有许多管脚，这些管脚和总线相连，CPU通过总线跟外部器件进行交互</li>
 <li>总线：一根根导线的集合</li>
@@ -587,11 +587,11 @@
 <li>数据总线</li>
 <li>控制总线</li>
 </ul>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247620691639.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247620691639.jpg-style02" alt=""></p>
 </li>
 </ul>
 <p><strong>举个例子</strong></p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247621338263.png-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247621338263.png-style02" alt=""></p>
 <ul>
 <li><strong>地址总线</strong><ul>
 <li>它的宽度决定了CPU的<em>寻址能力</em></li>
@@ -599,7 +599,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247621451257.png-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247621451257.png-style02" alt=""></p>
 <ul>
 <li><strong>数据总线</strong><ul>
 <li>它的宽度决定了CPU的单次数据传送量，也就是数据<em>传送速度</em></li>
@@ -629,10 +629,10 @@
 <li>地址总线为24,所以 寻址能力为 2^24 = 2^20 <em> 2^4 = 1MB </em> 16 = 16MB;</li>
 <li>地址总线为32,所以 寻址能力为 2^30 = 2^30 <em> 2^2 = 1GB </em> 4 = 4GB;</li>
 </ul>
-<p><strong>答案</strong><br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622018451.png-style02" alt=""></p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622662488.png-style02" alt=""></p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622844191.png-style02" alt=""></p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247622924501.png-style02" alt=""></p>
+<p><strong>答案</strong><br><img src="http://image.coderdeng.xyz/2018-04-28-15247622018451.png-style02" alt=""></p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p><img src="http://image.coderdeng.xyz/2018-04-28-15247622662488.png-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247622844191.png-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247622924501.png-style02" alt=""></p>
 <ul>
 <li><p>内存地址空间的大小受CPU地址总线宽度的限制。8086的地址总线宽度为20，可以定位2^20个不同的内存单元（内存地址范围0x00000~0xFFFFF），所以8086的内存空间大小为1MB</p>
 </li>
@@ -691,8 +691,8 @@
 <li>字(Word): 1个字由2个字节组成(16位),这2个字节分别称为高字节和低字节.</li>
 <li>双字(Doubleword): 1个双字由两个字组成(32位)</li>
 </ul>
-<p>那么计算机存储数据它会分为有符号数和无符号数.那么关于这个看图就理解了!<br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623206581.jpg-style02" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">无符号数,直接换算!</span><br><span class="line">有符号数:正数:  0    1    2    3    4    5    6    7 负数:  F    E    D    B    C    A    9    8      -1   -2   -3   -4   -5   -6   -7   -8</span><br></pre></td></tr></table></figure>
+<p>那么计算机存储数据它会分为有符号数和无符号数.那么关于这个看图就理解了!<br><img src="http://image.coderdeng.xyz/2018-04-28-15247623206581.jpg-style02" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">无符号数,直接换算!</span><br><span class="line">有符号数:</span><br><span class="line">正数:  0    1    2    3    4    5    6    7 </span><br><span class="line">负数:  F    E    D    B    C    A    9    8</span><br><span class="line">      -1   -2   -3   -4   -5   -6   -7   -8</span><br></pre></td></tr></table></figure>
 <p>###自定义进制符号</p>
 <p>#####练习</p>
 <ul>
@@ -704,7 +704,7 @@
 <li>现在有9进制数 9个符号分别是：2，9，1，7，6，5，4， 8，3 逢9进1 那么： 123 + 234 = ____</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">十进制:    0  1  2  3  4  5  6  7  8  </span><br><span class="line">自定义:    2  9  1  7  6  5  4  8  3  </span><br><span class="line">         92 99 91 97 96 95 94 98 93 </span><br><span class="line">         12 19 11 17 16 15 14 18 13 </span><br><span class="line">         72 79 71 77 76 75 74 78 73 </span><br><span class="line">         62 69 61 67 66 65 64 68 63 </span><br><span class="line">         52 59 51 57 56 55 54 58 53 </span><br><span class="line">         42 49 41 47 46 45 44 48 43 </span><br><span class="line">         82 89 81 87 86 85 84 88 83 </span><br><span class="line">         32 39 31 37 36 35 34 38 33 </span><br><span class="line">         922</span><br></pre></td></tr></table></figure>
-<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p><strong>内部部件之间由总线连接</strong><br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623385765.jpg-style02" alt=""></p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p><strong>内部部件之间由总线连接</strong><br><img src="http://image.coderdeng.xyz/2018-04-28-15247623385765.jpg-style02" alt=""></p>
 <ul>
 <li>对程序员来说，CPU中最主要部件是寄存器，可以通过改变寄存器的内容来实现对CPU的控制</li>
 <li>不同的CPU，寄存器的个数、结构是不相同的</li>
@@ -713,14 +713,14 @@
 <li><p>ARM64拥有有31个64位的通用寄存器 x0 到 x30,这些寄存器通常用来存放一般性的数据，称为通用寄存器（有时也有特定用途）</p>
 <ul>
 <li>那么w0 到 w28 这些是32位的. 因为64位CPU可以兼容32位.所以可以只使用64位寄存器的低32位.</li>
-<li>比如 w0 就是 x0的低32位!<br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623516661.jpg-style02" alt=""></li>
+<li>比如 w0 就是 x0的低32位!<br><img src="http://image.coderdeng.xyz/2018-04-28-15247623516661.jpg-style02" alt=""></li>
 </ul>
 </li>
 <li><p>通常，CPU会先将内存中的数据存储到通用寄存器中，然后再对通用寄存器中的数据进行运算</p>
 </li>
 <li>假设内存中有块红色内存空间的值是3，现在想把它的值加1，并将结果存储到蓝色内存空间</li>
 </ul>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-04-28-15247623786930.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-04-28-15247623786930.jpg-style02" alt=""></p>
 <ul>
 <li>CPU首先会将红色内存空间的值放到X0寄存器中：mov X0,红色内存空间</li>
 <li>然后让X0寄存器与1相加：add X0,1</li>
@@ -777,7 +777,7 @@
   <p><span>本文标题:</span><a href="/2018/04/20/001-初识汇编.html">001- 初识汇编</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
   <p><span>发布时间:</span>2018年04月20日 - 23:04</p>
-  <p><span>最后更新:</span>2018年06月27日 - 18:06</p>
+  <p><span>最后更新:</span>2019年05月06日 - 00:05</p>
   <p><span>原始链接:</span><a href="/2018/04/20/001-初识汇编.html" title="001- 初识汇编">https://dzhijian.github.io/2018/04/20/001-初识汇编.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2018/04/20/001-初识汇编.html"  aria-label="复制成功！"></i></span>
   </p>

@@ -113,16 +113,16 @@
 <meta property="og:site_name" content="James">
 <meta property="og:description" content="网络协议1.网络协议有：TCP/IP、Scoket、HTTP等等。 OSI七层网络模型由上到下分别是  应用层 表示层 会话层 传输层 网络层 数据链路层 物理层    http协议对应于应用层 tcp协议对应于传输层 ip协议对应于网络层  TCP/IP是传输层协议，主要解决数据如何在网络中传输；而HTTP是应用层协议，主要解决如何包装数据。三者本质上没有可比性。  何况HTTP协议是基于TCP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367423753911.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367421343502.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367424193534.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367425859400.png-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367428458445.jpg-style02">
-<meta property="og:updated_time" content="2018-09-18T03:28:33.358Z">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-09-12-15367423753911.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-09-12-15367421343502.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-09-12-15367424193534.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-09-12-15367425859400.png-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-09-12-15367428458445.jpg-style02">
+<meta property="og:updated_time" content="2019-05-05T16:19:21.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发-Socket通信原理">
 <meta name="twitter:description" content="网络协议1.网络协议有：TCP/IP、Scoket、HTTP等等。 OSI七层网络模型由上到下分别是  应用层 表示层 会话层 传输层 网络层 数据链路层 物理层    http协议对应于应用层 tcp协议对应于传输层 ip协议对应于网络层  TCP/IP是传输层协议，主要解决数据如何在网络中传输；而HTTP是应用层协议，主要解决如何包装数据。三者本质上没有可比性。  何况HTTP协议是基于TCP">
-<meta name="twitter:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367423753911.jpg-style02">
+<meta name="twitter:image" content="http://image.coderdeng.xyz/2018-09-12-15367423753911.jpg-style02">
 
 
 
@@ -454,7 +454,7 @@
 <li><strong>数据链路层</strong></li>
 <li><strong>物理层</strong></li>
 </ol>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367423753911.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-09-12-15367423753911.jpg-style02" alt=""></p>
 <ul>
 <li>http协议对应于应用层</li>
 <li>tcp协议对应于传输层</li>
@@ -462,8 +462,8 @@
 </ul>
 <p><strong>TCP/IP</strong>是传输层协议，主要解决数据如何在网络中传输；而HTTP是应用层协议，主要解决如何包装数据。三者本质上没有可比性。  何况HTTP协议是基于TCP连接的。<br>网络层的”ip地址”可以唯一标识网络中的主机，而传输层的“协议+端口”可以唯一标识主机中的应用程序（进程）。这样利用三元组（ip地址，协议，端口）就可以标识网络的进程</p>
 <p><strong>TCP/IP</strong>（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协议集，它是为广域网（WANs）设计的。<br><strong>TCP/IP</strong>协议存在于OS中，网络服务通过OS提供，在OS中增加支持TCP/IP的系统调用——Berkeley套接字，如Socket，Connect，Send，Recv等<br><strong>UDP</strong>（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是属于TCP/IP协议族中的一种。如图：</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367421343502.jpg-style02" alt="-w596"></p>
-<p>TCP/IP协议族包括运输层、网络层、链路层，而socket所在位置如图，Socket是应用层与TCP/IP协议族通信的中间软件抽象层。<br><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367424193534.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-09-12-15367421343502.jpg-style02" alt="-w596"></p>
+<p>TCP/IP协议族包括运输层、网络层、链路层，而socket所在位置如图，Socket是应用层与TCP/IP协议族通信的中间软件抽象层。<br><img src="http://image.coderdeng.xyz/2018-09-12-15367424193534.jpg-style02" alt=""></p>
 <h3 id="Http和Socket连接的区别"><a href="#Http和Socket连接的区别" class="headerlink" title="Http和Socket连接的区别"></a>Http和Socket连接的区别</h3><h4 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h4><p>TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。</p>
 <p>建立起一个TCP连接需要经过“三次握手”：</p>
 <blockquote>
@@ -476,7 +476,7 @@
 <p>第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。</p>
 </blockquote>
 <p>一个完整的三次握手也就是： 请求—应答—再次确认。</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367425859400.png-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-09-12-15367425859400.png-style02" alt=""></p>
 <p>握手过程中传送的包里不包含数据，三次握手完毕后，客户端与服务器才正式开始传送数据。理想状态下，TCP连接一旦建立，在通信双方中的任何一方主动关闭连接之前，TCP连接都将被一直保持下去。断开连接时服务器和客户端均可以主动发起断开TCP连接的请求，断开过程需要经过“四次握手”</p>
 <h4 id="HTTP连接"><a href="#HTTP连接" class="headerlink" title="HTTP连接"></a>HTTP连接</h4><p>HTTP协议即超文本传送协议(HypertextTransferProtocol )是Web联网的基础，也是手机联网常用的协议之一，HTTP协议是建立在TCP协议之上的一种应用。</p>
 <p>HTTP连接最显著的特点是客户端发送的每次请求都需要服务器回送响应，在请求结束后，会主动释放连接。从建立连接到关闭连接的过程称为“一次连接”。</p>
@@ -486,7 +486,7 @@
 <p>做法是即时不需要获得任何数据，客户端也保持每隔一段固定的时间向服务器发送一次“保持连接”的请求，服务器在收到该请求后对客户端进行回复，表明知道客户端“在线”。若服务器长时间无法收到客户端的请求，则认为客户端“下线”，若客户端长时间无法收到服务器的回复，则认为网络已经断开。</p>
 <h3 id="Socket原理"><a href="#Socket原理" class="headerlink" title="Socket原理"></a>Socket原理</h3><h4 id="socket概念"><a href="#socket概念" class="headerlink" title="socket概念"></a>socket概念</h4><p>Socket:又称”套接字”,应用程序通过”套接字”向网络发送请求或应答,它是一个针对TCP和UDP编程的接口，借助它建立TCP/UDP连接。socket连接就是所谓的长连接,理论上客户端和服务器端一旦建立起连接将不会主动断掉.它是网络通信过程中端点的抽象表示，包含进行网络通信必须的五种信息：连接使用的协议，本地主机的IP地址，本地进程的协议端口，远地主机的IP地址，远地进程的协议端口。</p>
 <p>应用层通过传输层进行数据通信时，TCP会遇到同时为多个应用程序进程提供并发服务的问题。多个TCP连接或多个应用程序进程可能需要通过同一个TCP协议端口传输数据。为了区别不同的应用程序进程和连接，许多计算机操作系统为应用程序与TCP／IP协议交互提供了套接字(Socket)接口。应用层可以和传输层通过Socket接口，区分来自不同应用程序进程或网络连接的通信，实现数据传输的并发服务。</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-09-12-15367428458445.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-09-12-15367428458445.jpg-style02" alt=""></p>
 <p>服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。客户端发送数据请求，服务器端接收请求并处理请求，然后把回应数据发送给客户端，客户端读取数据，最后关闭连接，一次交互结束。</p>
 <h4 id="建立socket连接"><a href="#建立socket连接" class="headerlink" title="建立socket连接"></a>建立socket连接</h4><p>建立Socket连接至少需要一对套接字，其中一个运行于客户端，称为ClientSocket，另一个运行于服务器端，称为ServerSocket。</p>
 <p>套接字之间的连接过程分为三个步骤：服务器监听，客户端请求，连接确认。</p>
@@ -536,7 +536,7 @@
   <p><span>本文标题:</span><a href="/2018/09/10/iOSSocketStudy.html">iOS开发-Socket通信原理</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
   <p><span>发布时间:</span>2018年09月10日 - 17:09</p>
-  <p><span>最后更新:</span>2018年09月18日 - 11:09</p>
+  <p><span>最后更新:</span>2019年05月06日 - 00:05</p>
   <p><span>原始链接:</span><a href="/2018/09/10/iOSSocketStudy.html" title="iOS开发-Socket通信原理">https://dzhijian.github.io/2018/09/10/iOSSocketStudy.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2018/09/10/iOSSocketStudy.html"  aria-label="复制成功！"></i></span>
   </p>

@@ -113,17 +113,17 @@
 <meta property="og:site_name" content="James">
 <meta property="og:description" content="目录  如何创建podspec文件 如何编写podspec文件 如何实现目录分层 如何校验podspec文件 更新维护   1.如何创建podspec文件创建podspec文件只需要一行命令，在你自己的三方库的根目录下输入下面的命令： 1pod spec create XXXKit 然后在项目目录下将会生成一个podspec文件  2.如何编写podspec文件我们先来打开ZJKitTool.po">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256023744797.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256024482307.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256028392850.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256029266168.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256029509992.jpg-style02">
-<meta property="og:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256034665366.jpg-style02">
-<meta property="og:updated_time" content="2018-06-19T09:14:28.165Z">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256023744797.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256024482307.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256028392850.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256029266168.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256029509992.jpg-style02">
+<meta property="og:image" content="http://image.coderdeng.xyz/2018-06-19-15256034665366.jpg-style02">
+<meta property="og:updated_time" content="2019-05-05T16:18:04.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods 创建公有库,配置podspec文件">
 <meta name="twitter:description" content="目录  如何创建podspec文件 如何编写podspec文件 如何实现目录分层 如何校验podspec文件 更新维护   1.如何创建podspec文件创建podspec文件只需要一行命令，在你自己的三方库的根目录下输入下面的命令： 1pod spec create XXXKit 然后在项目目录下将会生成一个podspec文件  2.如何编写podspec文件我们先来打开ZJKitTool.po">
-<meta name="twitter:image" content="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256023744797.jpg-style02">
+<meta name="twitter:image" content="http://image.coderdeng.xyz/2018-06-19-15256023744797.jpg-style02">
 
 
 
@@ -456,9 +456,9 @@
 <h3 id="1-如何创建podspec文件"><a href="#1-如何创建podspec文件" class="headerlink" title="1.如何创建podspec文件"></a>1.如何创建podspec文件</h3><p>创建podspec文件只需要一行命令，在你自己的三方库的根目录下输入下面的命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create XXXKit</span><br></pre></td></tr></table></figure>
 <p>然后在项目目录下将会生成一个podspec文件</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256023744797.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256023744797.jpg-style02" alt=""></p>
 <h3 id="2-如何编写podspec文件"><a href="#2-如何编写podspec文件" class="headerlink" title="2.如何编写podspec文件"></a>2.如何编写podspec文件</h3><p>我们先来打开ZJKitTool.podspec文件看看里面的内容。基本都是针对ZJKitTool的描述和介绍</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256024482307.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256024482307.jpg-style02" alt=""></p>
 <p>一些常用的信息介绍：</p>
 <blockquote>
 <p>name：框架名<br>version：当前版本（注意，是当前版本，假如你后续更新了新版本，需要修改此处）<br>summary：简要描述，在pod search ZCPKit的时候会显示该信息。<br>description：详细描述<br>homepage：页面链接<br>license：开源协议<br>author：作者<br>source：源码git地址<br>platform：支持最低ios版本<br>source_files：源文件（可以包含.h和.m）<br>public_header_files：头文件(.h文件)<br>resources：资源文件（配置的文件都会被放到mainBundle中）<br>resource_bundles：资源文件（配置的文件会放到你自己指定的bundle中）<br>frameworks：依赖的系统框架<br>vendored_frameworks：依赖的非系统框架<br>libraries：依赖的系统库<br>vendored_libraries：依赖的非系统的静态库<br>dependency：依赖的三方库</p>
@@ -466,9 +466,9 @@
 <p>上面列举的信息大部分来自pod默认生成的podspec文件中的给的，其中需要重点注意标识黑体的这几个信息。</p>
 <p>你在三方库中看到的那些文件都是通过这些配置来确定的。当<code>pod install</code>引入三方库时，只会引入你在podspec中配置的那些文件。</p>
 <p>下面我会举例说明该如何写podsepc中的每项配置。</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256028392850.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256028392850.jpg-style02" alt=""></p>
 <p>如图所示的目录结构，每个配置项的写法如下：</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256029266168.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256029266168.jpg-style02" alt=""></p>
 <blockquote>
 <p>source_files：配置三方库的源文件（.h或.m文件）</p>
 </blockquote>
@@ -501,10 +501,10 @@
 <blockquote>
 <p>目录分层，结构清晰；<br>使用pod引入一个三方库时，可以只引入一个subspec而不用将整个三方库引入。</p>
 </blockquote>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256029509992.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256029509992.jpg-style02" alt=""></p>
 <p>如果想有多层的目录结构还可以继续嵌套下去。</p>
 <p>有几个需要注意的地方：</p>
-<p><img src="http://p7l9kf5i4.bkt.clouddn.com/2018-06-19-15256034665366.jpg-style02" alt=""></p>
+<p><img src="http://image.coderdeng.xyz/2018-06-19-15256034665366.jpg-style02" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.层级不能出现循环依赖。</span><br><span class="line"></span><br><span class="line">* 比如类 UIAlertView+ZJHelperKitUIKit.h 中引用#import &quot;NSArray+ZJHelperKit.h&quot;，</span><br><span class="line">同时 NSArray+ZJHelperKit.h中引用 #import &quot;UIAlertView+ZJHelperKitUIKit.h&quot;。</span><br><span class="line">这样当写podspec时就需要在Object层级中写dependency &apos;ZCCategory/UIKit&apos;，在UIKit层级中写dependency &apos;ZCCategory/Object&apos;。如此便存在UIKit与Object层级之间的循环依赖。出现循环依赖时，三方库是无法成功提交到repo上的，会报依赖错误。解决办法是，层级间要尽量解耦。</span><br><span class="line"></span><br><span class="line">2.分层的层级不要太多，层级不要太深。</span><br><span class="line"></span><br><span class="line">为了避免出现上述的循环依赖错误。</span><br><span class="line"></span><br><span class="line">3.source_files使用的是真实的物理路径，而dependency依赖其他层级时使用的是层级路径，不是真实的物理路径</span><br><span class="line"></span><br><span class="line">例如：NSArray+ZJHelperKit.h 文件的真实路径是：ZJKitTool/ZJCategory/Object，而Object层级是属于ZJCategory层级下的一个子subspec，所以当写UIKit层级依赖Object层级时要写：dependency &apos;ZJCategory/Object&apos;而不是dependency &apos;ZJKitTool/ZJCategory/Object&apos;</span><br></pre></td></tr></table></figure>
 <h3 id="4-如何校验podspec文件"><a href="#4-如何校验podspec文件" class="headerlink" title="4.如何校验podspec文件"></a>4.如何校验podspec文件</h3><p>在podspec写好之后我们需要验证一下编写的内容是否有误。可以在命令行的三方库当前路径下使用下面的命令：</p>
 <figure class="highlight plain"><figcaption><span>lib lint （从本地验证你的pod能否通过验证）</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint （从本地和远程验证你的pod能否通过验证）</span><br><span class="line"></span><br><span class="line">pod lib lint --verbose （加--verbose可以显示详细的检测过程，出错时会显示详细的错误信息）</span><br><span class="line">pod lib lint --allow-warnings (允许警告，用来解决由于代码中存在警告导致不能通过校验的问题)</span><br><span class="line">pod lib lint --help （查看所有可选参数，可选参数可以加多个）</span><br></pre></td></tr></table></figure>
@@ -559,7 +559,7 @@
   <p><span>本文标题:</span><a href="/2018/06/19/CocoaPods-创建公有库-配置podspec文件.html">CocoaPods 创建公有库,配置podspec文件</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
   <p><span>发布时间:</span>2018年06月19日 - 17:06</p>
-  <p><span>最后更新:</span>2018年06月19日 - 17:06</p>
+  <p><span>最后更新:</span>2019年05月06日 - 00:05</p>
   <p><span>原始链接:</span><a href="/2018/06/19/CocoaPods-创建公有库-配置podspec文件.html" title="CocoaPods 创建公有库,配置podspec文件">https://dzhijian.github.io/2018/06/19/CocoaPods-创建公有库-配置podspec文件.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2018/06/19/CocoaPods-创建公有库-配置podspec文件.html"  aria-label="复制成功！"></i></span>
   </p>
