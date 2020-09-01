@@ -378,7 +378,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/25/2019-06-25.html" itemprop="url">OpenGL学习 纹理下(五)</a></h1>
+                <a class="post-title-link" href="/2019/06/25/2019-06-25.html" itemprop="url">iOS NSTimer 解决循环引用问题</a></h1>
         
 
         <div class="post-meta">
@@ -411,7 +411,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OpenGL/" itemprop="url" rel="index"><span itemprop="name">OpenGL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS-开发/" itemprop="url" rel="index"><span itemprop="name">iOS 开发</span></a></span>
 
                 
                 
@@ -447,8 +447,10 @@
       
         
           
-          
-          
+          在我们平时的开发过程中，经常会使用一些定时器跑定时任务，常用的 NSTimer，大家应该很熟悉
+1self.timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(timeDownAction) userInfo:nil repeats:true];
+造成循环引用的原因是因为 timer 被 self 强引用，
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/06/25/2019-06-25.html#more" rel="contents">
@@ -2098,7 +2100,7 @@ Moya的一些特色功能:
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate"> 
     <i class="fa fa-user"></i>
   </span>
