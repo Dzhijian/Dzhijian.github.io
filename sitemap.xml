@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dzhijian.github.io/2019/07/18/2019-07-18.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dzhijian.github.io/google9d502752261c542e.html</loc>
     
     <lastmod>2020-09-02</lastmod>
@@ -327,6 +334,13 @@
   
   <url>
     <loc>https://dzhijian.github.io/tags/UILocalNotification/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dzhijian.github.io/tags/Runtime/</loc>
     <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
