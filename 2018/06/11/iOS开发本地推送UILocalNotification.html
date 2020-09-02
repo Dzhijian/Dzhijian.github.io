@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="一、简介UILocalNotification 是通过设置时间来触发本地推送通知的通知方式,不需要连网就能实现推送功能。本地通知触发后，会显示在通知中心中，并根据配置，显示横幅和播放声音，和App的icon上显示通知的条数。  UILocalNotification 适用于闹钟、提醒、备忘录等功能。缺点是UILocalNotification可以设置的最大提醒条数为64条。超过64条的通知将系统会">
+<meta name="keywords" content="本地推送,UILocalNotification">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发本地推送UILocalNotification">
+<meta property="og:url" content="https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html">
+<meta property="og:site_name" content="James">
+<meta property="og:description" content="一、简介UILocalNotification 是通过设置时间来触发本地推送通知的通知方式,不需要连网就能实现推送功能。本地通知触发后，会显示在通知中心中，并根据配置，显示横幅和播放声音，和App的icon上显示通知的条数。  UILocalNotification 适用于闹钟、提醒、备忘录等功能。缺点是UILocalNotification可以设置的最大提醒条数为64条。超过64条的通知将系统会">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-03T16:50:39.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS开发本地推送UILocalNotification">
+<meta name="twitter:description" content="一、简介UILocalNotification 是通过设置时间来触发本地推送通知的通知方式,不需要连网就能实现推送功能。本地通知触发后，会显示在通知中心中，并根据配置，显示横幅和播放声音，和App的icon上显示通知的条数。  UILocalNotification 适用于闹钟、提醒、备忘录等功能。缺点是UILocalNotification可以设置的最大提醒条数为64条。超过64条的通知将系统会">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="James" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>iOS开发本地推送UILocalNotification | James</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?700b1a669810539560b1eaa1900a1fa0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">James</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-balance-scale"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="James">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS开发本地推送UILocalNotification</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T00:39:27+08:00">2018-06-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS-开发/" itemprop="url" rel="index"><span itemprop="name">iOS 开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p><code>UILocalNotification</code> 是通过设置时间来触发本地推送通知的通知方式,不需要连网就能实现推送功能。本地通知触发后，会显示在通知中心中，并根据配置，显示横幅和播放声音，和App的icon上显示通知的条数。 </p>
+<p><code>UILocalNotification</code> 适用于闹钟、提醒、备忘录等功能。缺点是<code>UILocalNotification</code>可以设置的最大提醒条数为64条。超过64条的通知将系统会自动忽略。</p>
+<h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><ol>
+<li>创建UILocalNotification实例</li>
+<li>设置相关的属性，如：时间、时间间隔、是否重复、推送方式、推送铃声、推送标题、推送简介、推送的参数等等。</li>
+<li>注册添加本地通知</li>
+<li>Appdelegate.m 接收注册通知</li>
+<li>触发通知的业务跳转处理</li>
+<li>取消通知</li>
+</ol>
+<h3 id="三、属性介绍"><a href="#三、属性介绍" class="headerlink" title="三、属性介绍"></a>三、属性介绍</h3><p>属性介绍</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSDate</span> *fireDate;设置通知的提醒时间</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSTimeZone</span> *timeZone;设置时间的时区</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">NSCalendarUnit</span> repeatInterval;   设置重复间隔的单位，（天、周、月、年，<span class="number">0</span>表示不重复）  </span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSCalendar</span> *repeatCalendar;重复激发通知所使用的日历单位需要参考的日历，如果不设置的话，系统默认的日历将被作为参考日历。</span><br><span class="line"></span><br><span class="line"><span class="comment">//    NSString *const NSGregorianCalendar; 公历</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    NSString * const NSChineseCalendar;   农历</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">CLRegion</span> *region;设置触发通知的地理区域</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">assign</span>) <span class="built_in">BOOL</span> regionTriggersOnce;是否穿越通知地理区域时再次触发通知</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *alertBody; 通知提示中显示的消息，内容。</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> hasAction;  控制该通知是否显示或隐藏警报动作。</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *alertAction; 设置通知动作按钮的标题。</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *alertLaunchImage;设置通知动作按钮的图像。</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *alertTitle; 设置通知原因的简短描述。</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *soundName;通知提示音，可以自定义</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> applicationIconBadgeNumber;应用程序icon上的提醒个数</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSDictionary</span> *userInfo; 设置应用自定义信息</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *category ;设置通知的分类标示</span><br></pre></td></tr></table></figure>
+<p>  <strong><code>NSCalendarUnit repeatInterval</code> 循环枚举</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_OPTIONS</span>(<span class="built_in">NSUInteger</span>, <span class="built_in">NSCalendarUnit</span>) &#123;</span><br><span class="line">        <span class="built_in">NSCalendarUnitEra</span>                = kCFCalendarUnitEra,<span class="comment">//一个年代、一个世纪循环一次。</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitYear</span>               = kCFCalendarUnitYear,<span class="comment">//每年循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitMonth</span>              = kCFCalendarUnitMonth,<span class="comment">//每月循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitDay</span>                = kCFCalendarUnitDay,<span class="comment">//每天循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitHour</span>               = kCFCalendarUnitHour,<span class="comment">//每小时循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitMinute</span>             = kCFCalendarUnitMinute,<span class="comment">//每分钟循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitSecond</span>             = kCFCalendarUnitSecond,<span class="comment">//每秒循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitWeekday</span>            = kCFCalendarUnitWeekday,<span class="comment">//平常日、工作日循环，但是周末也会。(*而不是每周循环，具体和NSCalendarUnitDay有什么区别，暂时没有测试出来，如果哪位知道请告知，感谢)</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitWeekdayOrdinal</span>     = kCFCalendarUnitWeekdayOrdinal,</span><br><span class="line">        <span class="built_in">NSCalendarUnitQuarter</span>            <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_6, <span class="number">4</span>_0) = kCFCalendarUnitQuarter,<span class="comment">//一个季度循环一次</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitWeekOfMonth</span>        <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">5</span>_0) = kCFCalendarUnitWeekOfMonth,<span class="comment">//每个月的第几周</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitWeekOfYear</span>         <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">5</span>_0) = kCFCalendarUnitWeekOfYear,<span class="comment">//每年的第几周</span></span><br><span class="line">        <span class="built_in">NSCalendarUnitYearForWeekOfYear</span>  <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">5</span>_0) = kCFCalendarUnitYearForWeekOfYear,</span><br><span class="line">        <span class="built_in">NSCalendarUnitNanosecond</span>         <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">5</span>_0) = (<span class="number">1</span> &lt;&lt; <span class="number">15</span>),</span><br><span class="line">        <span class="built_in">NSCalendarUnitCalendar</span>           <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0) = (<span class="number">1</span> &lt;&lt; <span class="number">20</span>),</span><br><span class="line">        <span class="built_in">NSCalendarUnitTimeZone</span>           <span class="built_in">NS_ENUM_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0) = (<span class="number">1</span> &lt;&lt; <span class="number">21</span>),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四、代码实现"><a href="#四、代码实现" class="headerlink" title="四、代码实现"></a>四、代码实现</h3><h4 id="1-在-Appdelegate-的application-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions-方法里面添加注册接收方法"><a href="#1-在-Appdelegate-的application-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions-方法里面添加注册接收方法" class="headerlink" title="1.在 Appdelegate 的application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions  方法里面添加注册接收方法"></a>1.在 Appdelegate 的<code>application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code>  方法里面添加注册接收方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([<span class="built_in">UIApplication</span> instancesRespondToSelector:<span class="keyword">@selector</span>(registerUserNotificationSettings:)])&#123;</span><br><span class="line">       [[<span class="built_in">UIApplication</span> sharedApplication] registerUserNotificationSettings:[<span class="built_in">UIUserNotificationSettings</span> settingsForTypes:<span class="built_in">UIUserNotificationTypeAlert</span>|<span class="built_in">UIUserNotificationTypeBadge</span>|<span class="built_in">UIUserNotificationTypeSound</span> categories:<span class="literal">nil</span>]];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除"><a href="#2-在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除" class="headerlink" title="2.在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除"></a>2.在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#pragma mark - 注册本地通知方法</span></span><br><span class="line"><span class="comment">// 注册本地通知</span></span><br><span class="line">-(<span class="keyword">void</span>)registerLocalNotification:(<span class="built_in">NSString</span> *)timeStr title:(<span class="built_in">NSString</span> *)title desc:(<span class="built_in">NSString</span> *)desc soundName:(<span class="built_in">NSString</span> *)soundName remindType:(<span class="built_in">NSString</span> *)remindType tagStr:(<span class="built_in">NSString</span> *)tagStr remindId:(<span class="built_in">NSString</span> *)remindId&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UILocalNotification</span> * notification = [[<span class="built_in">UILocalNotification</span> alloc] init];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSDateFormatter</span> * curndf = [[<span class="built_in">NSDateFormatter</span> alloc] init];</span><br><span class="line">    [curndf setDateFormat:<span class="string">@"yyyy-MM-dd"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span> * curDate = [curndf stringFromDate:[<span class="built_in">NSDate</span> date]];</span><br><span class="line">    <span class="comment">// 时间加上秒</span></span><br><span class="line">    <span class="built_in">NSString</span> * finalTimeStr = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@ %@:00"</span>,curDate,timeStr];</span><br><span class="line">    <span class="built_in">NSDateFormatter</span> * finalTimeFormatter = [[<span class="built_in">NSDateFormatter</span> alloc] init];</span><br><span class="line">    [finalTimeFormatter setDateFormat:<span class="string">@"yyyy-MM-dd HH:mm:ss"</span>];</span><br><span class="line">    <span class="built_in">NSDate</span> * finalDate = [finalTimeFormatter dateFromString:finalTimeStr];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置什么时间点(具体的时间)触发本地通知.</span></span><br><span class="line">    notification.fireDate = finalDate;</span><br><span class="line">    <span class="comment">// 设置时区,default手机时区</span></span><br><span class="line">    notification.timeZone = [<span class="built_in">NSTimeZone</span> defaultTimeZone];</span><br><span class="line">    <span class="comment">// 设置重复间隔, 按天跑</span></span><br><span class="line">    notification.repeatInterval = kCFCalendarUnitDay;</span><br><span class="line">    <span class="comment">// 弹出的通知标题</span></span><br><span class="line">    notification.alertTitle = title;</span><br><span class="line">    <span class="comment">// 弹出的通知内容</span></span><br><span class="line">    notification.alertBody = desc;</span><br><span class="line">    <span class="comment">// Badge个数</span></span><br><span class="line">    notification.applicationIconBadgeNumber = notification.applicationIconBadgeNumber+<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 通知被触发时播放声音</span></span><br><span class="line">    notification.soundName = <span class="built_in">UILocalNotificationDefaultSoundName</span>;</span><br><span class="line">    <span class="comment">// 通知触发时播放的声音</span></span><br><span class="line">    notification.soundName = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@.mp3"</span>,soundName];</span><br><span class="line">    <span class="comment">// 通知的参数</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> * userDict = @&#123;<span class="string">@"nTimeStr"</span>:timeStr,<span class="string">@"remindType"</span>:remindType,<span class="string">@"tag"</span>:tagStr,<span class="string">@"remindId"</span>:remindId&#125;;</span><br><span class="line">    notification.userInfo = userDict;</span><br><span class="line">    <span class="comment">// 添加推送到UIApplication</span></span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] scheduleLocalNotification:notification];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-取消通知"><a href="#3-取消通知" class="headerlink" title="3.取消通知"></a>3.取消通知</h4><h5 id="3-1-取消全部的通知"><a href="#3-1-取消全部的通知" class="headerlink" title="3.1 取消全部的通知"></a>3.1 取消全部的通知</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取消全部的通知</span></span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] cancelAllLocalNotifications];</span><br></pre></td></tr></table></figure>
+<h5 id="3-2-取消对应-ID-的通知"><a href="#3-2-取消对应-ID-的通知" class="headerlink" title="3.2 取消对应 ID 的通知"></a>3.2 取消对应 ID 的通知</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IOS最多允许最近本地通知数量是64个，超过限制的本地通知将被忽略。</span></span><br><span class="line"><span class="meta">#pragma mark -- 删除通知</span></span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)cancelLocalNotificationWithKey:(<span class="built_in">NSString</span> *)key remindType:(<span class="built_in">NSString</span> *)remindType</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取所有本地通知数组</span></span><br><span class="line">    <span class="built_in">NSArray</span> *localNotifications = [<span class="built_in">UIApplication</span> sharedApplication].scheduledLocalNotifications;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"\n本地通知总数%@ \n 一共: %ld 个"</span>,localNotifications ,[localNotifications count]);</span><br><span class="line">    <span class="comment">// 循环遍历所有的通知</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">UILocalNotification</span> *notification <span class="keyword">in</span> localNotifications) &#123;</span><br><span class="line">    <span class="comment">// 取出每个通知的通知数据</span></span><br><span class="line">        <span class="built_in">NSDictionary</span> *userInfo = notification.userInfo;</span><br><span class="line">        <span class="keyword">if</span> (userInfo) &#123;</span><br><span class="line">            <span class="comment">// 根据设置通知参数时指定的key来获取通知参数</span></span><br><span class="line">            <span class="built_in">NSString</span> *info = userInfo[<span class="string">@"nTimeStr"</span>];</span><br><span class="line"></span><br><span class="line">            <span class="built_in">NSString</span> *type = userInfo[<span class="string">@"remindType"</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果找到需要取消的通知，则取消</span></span><br><span class="line">            <span class="keyword">if</span> (info != <span class="literal">nil</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> ([info isEqualToString:key] &amp;&amp; [type isEqualToString:remindType]) &#123;</span><br><span class="line">                    [[<span class="built_in">UIApplication</span> sharedApplication] cancelLocalNotification:notification];</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@"type:%@,key:%@,本地通知取消成功!!!"</span>,type,key);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-接收通知"><a href="#4-接收通知" class="headerlink" title="4.接收通知"></a>4.接收通知</h4><h5 id="4-1-前台接收通知，调用系统application-UIApplication-application-didReceiveLocalNotification-UILocalNotification-notification方法-，在这个方法里面做业务处理"><a href="#4-1-前台接收通知，调用系统application-UIApplication-application-didReceiveLocalNotification-UILocalNotification-notification方法-，在这个方法里面做业务处理" class="headerlink" title="4.1 前台接收通知，调用系统application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification方法 ，在这个方法里面做业务处理"></a>4.1 前台接收通知，调用系统<code>application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification</code>方法 ，在这个方法里面做业务处理</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 程序没有被杀死时,接收到本地通知时调用--点击通知时会执行这个方法,如果程序被杀死时,这个方法不再走,在application: didFinishLaunchingWithOptions:方法中获取</span></span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didReceiveLocalNotification:(<span class="built_in">UILocalNotification</span> *)notification&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"notification.userInfo = %@"</span>,notification.userInfo);</span><br><span class="line">    <span class="comment">// 获取通知详情</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *dict = notification.userInfo;</span><br><span class="line">    <span class="keyword">if</span> (dict) &#123;</span><br><span class="line">        <span class="comment">// 根据通知的类型参数做出对应的跳转</span></span><br><span class="line">        <span class="keyword">if</span> ([dict[<span class="string">@"remindType"</span>] isEqualToString:CPTakeMediciTableName]) &#123;</span><br><span class="line">            </span><br><span class="line">            CPMedicineRemindDetailViewController *medicine = [[CPMedicineRemindDetailViewController alloc]init];</span><br><span class="line">            medicine.remindId = dict[<span class="string">@"remindId"</span>];</span><br><span class="line">            medicine.timeStr = dict[<span class="string">@"nTimeStr"</span>];</span><br><span class="line">            medicine.type = CPMedicinePushNow;</span><br><span class="line">            [[<span class="keyword">self</span> currentViewController].navigationController pushViewController:medicine animated:<span class="literal">YES</span>];</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>([dict[<span class="string">@"remindType"</span>] isEqualToString:CPMeasureTableName])&#123;</span><br><span class="line"></span><br><span class="line">            CPMeasureRemindDetailViewController *measure = [[CPMeasureRemindDetailViewController alloc]init];</span><br><span class="line">            measure.tagStr = dict[<span class="string">@"tag"</span>];</span><br><span class="line">            measure.timeStr = dict[<span class="string">@"nTimeStr"</span>];</span><br><span class="line">            measure.type = CPMeasurePushNow;</span><br><span class="line">            [[<span class="keyword">self</span> currentViewController] presentViewController:measure animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-2-应用在后台被杀死了调用pplication-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions方法，在这个方法里面做业务处理"><a href="#4-2-应用在后台被杀死了调用pplication-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions方法，在这个方法里面做业务处理" class="headerlink" title="4.2 应用在后台被杀死了调用pplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法，在这个方法里面做业务处理"></a>4.2 应用在后台被杀死了调用<code>pplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code>方法，在这个方法里面做业务处理</h5><p>在<code>pplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code>方法中添加下面的代码</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (launchOptions != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">UILocalNotification</span> *localNotification = launchOptions[<span class="built_in">UIApplicationLaunchOptionsLocalNotificationKey</span>];</span><br><span class="line">        <span class="keyword">if</span> (localNotification != <span class="literal">nil</span>) &#123;</span><br><span class="line">            <span class="comment">// 程序完全退出状态下，点击推送通知后的业务处理</span></span><br><span class="line">            <span class="comment">// 根据通知的参数做不同的跳转</span></span><br><span class="line">            <span class="built_in">NSDictionary</span> *dict = localNotification.userInfo;</span><br><span class="line">            <span class="keyword">if</span> (dict) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> ([dict[<span class="string">@"remindType"</span>] isEqualToString:CPTakeMediciTableName]) &#123;</span><br><span class="line">                    CPMedicineRemindDetailViewController *medicine = [[CPMedicineRemindDetailViewController alloc]init];</span><br><span class="line">                    medicine.remindId = dict[<span class="string">@"remindId"</span>];</span><br><span class="line">                    medicine.timeStr = dict[<span class="string">@"nTimeStr"</span>];</span><br><span class="line">                    CPNavigationController *nav = [[CPNavigationController alloc]initWithRootViewController:medicine];</span><br><span class="line">                    [AppDelegate sharedInstance].window.rootViewController = nav;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>([dict[<span class="string">@"remindType"</span>] isEqualToString:CPMeasureTableName])&#123;</span><br><span class="line">                    </span><br><span class="line">                    CPMeasureRemindDetailViewController *measure = [[CPMeasureRemindDetailViewController alloc]init];</span><br><span class="line">                    measure.tagStr = dict[<span class="string">@"tag"</span>];</span><br><span class="line">                    measure.timeStr = dict[<span class="string">@"nTimeStr"</span>];</span><br><span class="line">                    [AppDelegate sharedInstance].window.rootViewController = measure;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="五、其他设置"><a href="#五、其他设置" class="headerlink" title="五、其他设置"></a>五、其他设置</h3><p>实现发送基于位置的通知方法（iOS8+）：</p>
+<blockquote>
+<p>1、无需编码，如果设备用户打开了定位，系统会给用户当前的位置来决定是否要给用户发送通知；</p>
+</blockquote>
+<blockquote>
+<p>2、需要获取用户定位权限CLLocation；</p>
+</blockquote>
+<blockquote>
+<p>3、精准度一般般。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/06/11/iOS开发本地推送UILocalNotification.html">iOS开发本地推送UILocalNotification</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
+  <p><span>发布时间:</span>2018年06月11日 - 00:06</p>
+  <p><span>最后更新:</span>2019年07月04日 - 00:07</p>
+  <p><span>原始链接:</span><a href="/2018/06/11/iOS开发本地推送UILocalNotification.html" title="iOS开发本地推送UILocalNotification">https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2018/06/11/iOS开发本地推送UILocalNotification.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">James-非商业性使用-禁止演绎 </a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/本地推送/" rel="tag"><i class="fa fa-tag"></i> 本地推送</a>
+          
+            <a href="/tags/UILocalNotification/" rel="tag"><i class="fa fa-tag"></i> UILocalNotification</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/20/001-初识汇编.html" rel="next" title="001- 初识汇编">
+                <i class="fa fa-chevron-left"></i> 001- 初识汇编
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/13/iOS开发NSString详解.html" rel="prev" title="iOS开发NSString详解">
+                iOS开发NSString详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk2MC8xMjQ5Ng"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="James" />
+            
+              <p class="site-author-name" itemprop="name">James</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Dzhijian" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto://646724452@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.jianshu.com/u/57d34dc38a0e" target="_blank" title="简书"><i class="fa fa-fw fa-book"></i>简书</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、简介"><span class="nav-number">1.</span> <span class="nav-text">一、简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、使用"><span class="nav-number">2.</span> <span class="nav-text">二、使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、属性介绍"><span class="nav-number">3.</span> <span class="nav-text">三、属性介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、代码实现"><span class="nav-number">4.</span> <span class="nav-text">四、代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在-Appdelegate-的application-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions-方法里面添加注册接收方法"><span class="nav-number">4.1.</span> <span class="nav-text">1.在 Appdelegate 的application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions  方法里面添加注册接收方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除"><span class="nav-number">4.2.</span> <span class="nav-text">2.在需要添加通知的页面添加注册通知，或者封装一层调用，可以根据通知需要传入需要的参数，控制通知的注册添加或取消删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-取消通知"><span class="nav-number">4.3.</span> <span class="nav-text">3.取消通知</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-取消全部的通知"><span class="nav-number">4.3.1.</span> <span class="nav-text">3.1 取消全部的通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-取消对应-ID-的通知"><span class="nav-number">4.3.2.</span> <span class="nav-text">3.2 取消对应 ID 的通知</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-接收通知"><span class="nav-number">4.4.</span> <span class="nav-text">4.接收通知</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-前台接收通知，调用系统application-UIApplication-application-didReceiveLocalNotification-UILocalNotification-notification方法-，在这个方法里面做业务处理"><span class="nav-number">4.4.1.</span> <span class="nav-text">4.1 前台接收通知，调用系统application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification方法 ，在这个方法里面做业务处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-应用在后台被杀死了调用pplication-UIApplication-application-didFinishLaunchingWithOptions-NSDictionary-launchOptions方法，在这个方法里面做业务处理"><span class="nav-number">4.4.2.</span> <span class="nav-text">4.2 应用在后台被杀死了调用pplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法，在这个方法里面做业务处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、其他设置"><span class="nav-number">5.</span> <span class="nav-text">五、其他设置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+-->
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
+</div>
+
+<!-- 
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"hibiki","bottom":-30,"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
+</html>
