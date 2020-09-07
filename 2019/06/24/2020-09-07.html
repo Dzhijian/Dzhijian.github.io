@@ -105,13 +105,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="James">
-<meta property="og:url" content="https://dzhijian.github.io/archives/2019/index.html">
+  <meta name="description" content="消息发送流程：1.首先检查这个selector是不是要忽略，如有了垃圾回收装置就不会理会retain，release等2.检测这个selector的target是不是nil，OC允许我们对一个nil对象执行任何方法不会Crash，因为运行时会被忽略掉3.查找这个类的实现IMP，先从缓存方法列表cache里查找，执行过的方法会添加到该列表中，如果找到了就运行对应的函数去执行相应的代码4.如果没有找到">
+<meta name="keywords" content="iOS 开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 消息发送机制与消息转发机制">
+<meta property="og:url" content="https://dzhijian.github.io/2019/06/24/2020-09-07.html">
 <meta property="og:site_name" content="James">
+<meta property="og:description" content="消息发送流程：1.首先检查这个selector是不是要忽略，如有了垃圾回收装置就不会理会retain，release等2.检测这个selector的target是不是nil，OC允许我们对一个nil对象执行任何方法不会Crash，因为运行时会被忽略掉3.查找这个类的实现IMP，先从缓存方法列表cache里查找，执行过的方法会添加到该列表中，如果找到了就运行对应的函数去执行相应的代码4.如果没有找到">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-09-07T14:08:03.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="James">
+<meta name="twitter:title" content="iOS 消息发送机制与消息转发机制">
+<meta name="twitter:description" content="消息发送流程：1.首先检查这个selector是不是要忽略，如有了垃圾回收装置就不会理会retain，release等2.检测这个selector的target是不是nil，OC允许我们对一个nil对象执行任何方法不会Crash，因为运行时会被忽略掉3.查找这个类的实现IMP，先从缓存方法列表cache里查找，执行过的方法会添加到该列表中，如果找到了就运行对应的函数去执行相应的代码4.如果没有找到">
 
 
 
@@ -120,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://dzhijian.github.io/archives/2019/"/>
+  <link rel="canonical" href="https://dzhijian.github.io/2019/06/24/2020-09-07.html"/>
 
 
 
@@ -130,7 +135,7 @@
   };
 </script>
 
-  <title>归档 | James</title>
+  <title>iOS 消息发送机制与消息转发机制 | James</title>
   
 
 
@@ -188,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -342,375 +347,228 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 31 篇日志。 继续努力。
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dzhijian.github.io/2019/06/24/2020-09-07.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="James">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">iOS 消息发送机制与消息转发机制</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T23:43:40+08:00">2019-06-24</time>
+            
+
+            
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/18/2019-07-18.html" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">iOS Runtime 详解</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS-开发/" itemprop="url" rel="index"><span itemprop="name">iOS 开发</span></a></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-07-18T20:44:10+08:00"
-              content="2019-07-18" >
-          07-18
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/25/2019-06-25.html" itemprop="url">
-              
-                <span itemprop="name">iOS NSTimer 解决循环引用问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-06-25T23:12:55+08:00"
-              content="2019-06-25" >
-          06-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/24/2020-09-07.html" itemprop="url">
-              
-                <span itemprop="name">iOS 消息发送机制与消息转发机制</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-06-24T23:43:40+08:00"
-              content="2019-06-24" >
-          06-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>消息发送流程：<br>1.首先检查这个selector是不是要忽略，如有了垃圾回收装置就不会理会retain，release等<br>2.检测这个selector的target是不是nil，OC允许我们对一个nil对象执行任何方法不会Crash，因为运行时会被忽略掉<br>3.查找这个类的实现IMP，先从缓存方法列表cache里查找，执行过的方法会添加到该列表中，如果找到了就运行对应的函数去执行相应的代码<br>4.如果没有找到就找类的方法列表methodLists中是否有对应的方法，找到则执行<br>5.如果该对象的类的方法列表中找不到就到父类的方法列表中查找，一直找到NSObject类为止<br>6.如果还是没找到就要开始进入消息转发（动态方法解析，备援接收者，消息重定向）</p>
+<p>动态方法解析<br>当runtime系统在Cache和类的方法列表（包括父类）中找不到要执行的方法时runtime会调用resolveInstanceMethod: 或者resolveClassMethod: 来给我们一次动态添加方法实现的机会，在该方法中可以使用class_addMethod动态添加方法，则例如：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动态添加一个方法</span></span><br><span class="line">+ (<span class="built_in">BOOL</span>)resolveInstanceMethod:(SEL)sel&#123;</span><br><span class="line">    <span class="built_in">NSString</span> * methodName = <span class="built_in">NSStringFromSelector</span>(sel);</span><br><span class="line">    <span class="keyword">if</span>([methodName isEqualToString:<span class="string">@"sendMessage:"</span>])&#123;</span><br><span class="line">        class_addMethod([<span class="keyword">self</span> <span class="keyword">class</span>], <span class="keyword">@selector</span>(sendMessage:), (IMP)sendMessage, <span class="string">"v@:@"</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> resolveInstanceMethod:name];  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> sendMessage(<span class="keyword">id</span> <span class="keyword">self</span>,SEL cmd,<span class="keyword">id</span> value)&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"value=%@"</span>,value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动态方法解析是在消息转发机制侵入之前执行，动态方法解析器将会首先给予提供该方法选择器对应的IMP的机会。如果你想让该方法选择器被传送到转发机制，就让resolveInstanceMethod：方法返回NO。</p>
+<p>*备援接收者<br>当对象所属类不能动态添加方法后，runtime就会询问当前的接受者是否有其他对象可以处理这个未知的selector</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)forwardingTargetForSelector:(SEL)aSelector&#123;</span><br><span class="line">    <span class="built_in">NSString</span> * methodName = <span class="built_in">NSStringFromSelector</span>(aSelector);</span><br><span class="line">    <span class="keyword">if</span>([methodName isEqualToString:<span class="string">@"sendMessage:"</span>])&#123;</span><br><span class="line">        <span class="keyword">return</span> [[OtherObject alloc]init];<span class="comment">//返回一个实现了某方法的对象，让他去调用，例如：OtherObject对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> forwardingTargetForSelector:aSelector];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>*消息重定向<br>当没有备援接收者时，就只剩下最后一次机会，那就是消息重定向。这个时候runtime会将未知消息的所有细节都封装为NSInvocation对象</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//消息中转,丢给能接受这个消息处理的对象</span></span><br><span class="line"><span class="comment">//获取方法签名</span></span><br><span class="line">- (<span class="built_in">NSMethodSignature</span> *)methodSignatureForSelector:(SEL)aSelector&#123;</span><br><span class="line">    <span class="built_in">NSString</span> * methodName = <span class="built_in">NSStringFromSelector</span>(aSelector);</span><br><span class="line">    <span class="keyword">if</span>([methodName isEqualToString:<span class="string">@"sendMessage:"</span>])&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="built_in">NSMethodSignature</span> signatureWithObjCTypes:<span class="string">"v@:@"</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> methodSignatureForSelector:aSelector];</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)forwardInvocation:(<span class="built_in">NSInvocation</span> *)anInvocation&#123;</span><br><span class="line">    SEL sel = anInvocation.selector;</span><br><span class="line">    OtherObject * oth = [[OtherObject alloc]init];</span><br><span class="line">    <span class="keyword">if</span>([oth respondsToSelector:sel])&#123;</span><br><span class="line">        [anInvocation invokeWithTarget:oth];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="keyword">super</span> forwardInvocation:anInvocation];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/28/designpatterncommand04.html" itemprop="url">
-              
-                <span itemprop="name">设计模式-命令模式-泛型命令、复合命令、多线程并发处理、闭包命令（四)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-28T22:46:04+08:00"
-              content="2019-01-28" >
-          01-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/17/designpatterncommand03.html" itemprop="url">
-              
-                <span itemprop="name">设计模式-命令模式-动态命令（三)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-17T22:58:28+08:00"
-              content="2019-01-17" >
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/12/designpatterncommand02.html" itemprop="url">
-              
-                <span itemprop="name">设计模式-命令模式具体案例分析（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-12T17:21:59+08:00"
-              content="2019-01-12" >
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/10/designpatterncommand01.html" itemprop="url">
-              
-                <span itemprop="name">设计模式-命令模式原理分析（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-10T22:57:31+08:00"
-              content="2019-01-10" >
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/09/designpattern01.html" itemprop="url">
-              
-                <span itemprop="name">设计模式学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-09T23:15:49+08:00"
-              content="2019-01-09" >
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/02/2018年终总结.html" itemprop="url">
-              
-                <span itemprop="name">2018-年终总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-02T01:07:52+08:00"
-              content="2019-01-02" >
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/06/24/2020-09-07.html">iOS 消息发送机制与消息转发机制</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 James 的个人博客">James</a></p>
+  <p><span>发布时间:</span>2019年06月24日 - 23:06</p>
+  <p><span>最后更新:</span>2020年09月07日 - 22:09</p>
+  <p><span>原始链接:</span><a href="/2019/06/24/2020-09-07.html" title="iOS 消息发送机制与消息转发机制">https://dzhijian.github.io/2019/06/24/2020-09-07.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://dzhijian.github.io/2019/06/24/2020-09-07.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">James-非商业性使用-禁止演绎 </a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS-开发/" rel="tag"><i class="fa fa-tag"></i> iOS 开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/28/designpatterncommand04.html" rel="next" title="设计模式-命令模式-泛型命令、复合命令、多线程并发处理、闭包命令（四)">
+                <i class="fa fa-chevron-left"></i> 设计模式-命令模式-泛型命令、复合命令、多线程并发处理、闭包命令（四)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/25/2019-06-25.html" rel="prev" title="iOS NSTimer 解决循环引用问题">
+                iOS NSTimer 解决循环引用问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk2MC8xMjQ5Ng"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1024,6 +882,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
 
   
 
