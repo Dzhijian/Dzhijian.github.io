@@ -367,6 +367,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://coderdeng.xyz/tags/Flutter-%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-02-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -455,6 +462,13 @@
   
   <url>
     <loc>http://coderdeng.xyz/categories/iOS-%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NSString/</loc>
+    <lastmod>2021-02-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://coderdeng.xyz/categories/Flutter-%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
